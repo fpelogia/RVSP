@@ -1,0 +1,850 @@
+ -- Copyright (C) 2017  Intel Corporation. All rights reserved.
+ -- Your use of Intel Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Intel Program License 
+ -- Subscription Agreement, the Intel Quartus Prime License Agreement,
+ -- the Intel FPGA IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Intel and sold by Intel or its authorized distributors.  Please
+ -- refer to the applicable agreement for further details.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1:       2.5V
+ --                  Bank 2:       2.5V
+ --                  Bank 3:       2.5V
+ --                  Bank 4:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 7:       2.5V
+ --                  Bank 8:       2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+CHIP  "RVSP"  ASSIGNED TO AN: EP4CE115F29C7
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+VCCIO8                       : A2        : power  :                   : 2.5V    : 8         :                
+novoPC[12]                   : A3        : output : 2.5 V             :         : 8         : N              
+rl1out[27]                   : A4        : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : A5        : power  :                   : 2.5V    : 8         :                
+ula_in2[7]                   : A6        : output : 2.5 V             :         : 8         : N              
+memout[6]                    : A7        : output : 2.5 V             :         : 8         : N              
+ulares[17]                   : A8        : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : A9        : power  :                   : 2.5V    : 8         :                
+rl2out[23]                   : A10       : output : 2.5 V             :         : 8         : N              
+ula_in2[25]                  : A11       : output : 2.5 V             :         : 8         : N              
+rl2out[11]                   : A12       : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : A13       : power  :                   : 2.5V    : 8         :                
+GND+                         : A14       :        :                   :         : 8         :                
+GND+                         : A15       :        :                   :         : 7         :                
+VCCIO7                       : A16       : power  :                   : 2.5V    : 7         :                
+rl1out[10]                   : A17       : output : 2.5 V             :         : 7         : N              
+breg_in[27]                  : A18       : output : 2.5 V             :         : 7         : N              
+ula_in2[12]                  : A19       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : A20       : power  :                   : 2.5V    : 7         :                
+RESERVED_INPUT               : A21       :        :                   :         : 7         :                
+imed_p2muxed[18]             : A22       : output : 2.5 V             :         : 7         : N              
+imed_p2muxed[17]             : A23       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : A24       : power  :                   : 2.5V    : 7         :                
+regWrite                     : A25       : output : 2.5 V             :         : 7         : N              
+imed[4]                      : A26       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : A27       : power  :                   : 2.5V    : 7         :                
+VCCIO2                       : AA1       : power  :                   : 2.5V    : 2         :                
+GND                          : AA2       : gnd    :                   :         :           :                
+rl1out[18]                   : AA3       : output : 2.5 V             :         : 2         : N              
+ulares[21]                   : AA4       : output : 2.5 V             :         : 2         : N              
+inst[0]                      : AA5       : output : 2.5 V             :         : 2         : N              
+inst[1]                      : AA6       : output : 2.5 V             :         : 2         : N              
+rl1out[23]                   : AA7       : output : 2.5 V             :         : 2         : N              
+breg_in[9]                   : AA8       : output : 2.5 V             :         : 3         : N              
+GNDA1                        : AA9       : gnd    :                   :         :           :                
+novoPC[6]                    : AA10      : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AA11      : power  :                   : 2.5V    : 3         :                
+dado[3]                      : AA12      : output : 2.5 V             :         : 3         : N              
+breg_in[17]                  : AA13      : output : 2.5 V             :         : 3         : N              
+breg_in[18]                  : AA14      : output : 2.5 V             :         : 3         : N              
+dado[10]                     : AA15      : output : 2.5 V             :         : 4         : N              
+dado[21]                     : AA16      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AA17      :        :                   :         : 4         :                
+VCCIO4                       : AA18      : power  :                   : 2.5V    : 4         :                
+imed[24]                     : AA19      : output : 2.5 V             :         : 4         : N              
+GNDA4                        : AA20      : gnd    :                   :         :           :                
+RESERVED_INPUT               : AA21      :        :                   :         : 4         :                
+RESERVED_INPUT               : AA22      :        :                   :         : 5         :                
+RESERVED_INPUT               : AA23      :        :                   :         : 5         :                
+RESERVED_INPUT               : AA24      :        :                   :         : 5         :                
+imed_p2muxed[23]             : AA25      : output : 2.5 V             :         : 5         : N              
+imed[12]                     : AA26      : output : 2.5 V             :         : 5         : N              
+GND                          : AA27      : gnd    :                   :         :           :                
+VCCIO5                       : AA28      : power  :                   : 2.5V    : 5         :                
+atualPC[28]                  : AB1       : output : 2.5 V             :         : 2         : N              
+atualPC[21]                  : AB2       : output : 2.5 V             :         : 2         : N              
+rl1out[24]                   : AB3       : output : 2.5 V             :         : 2         : N              
+novoPC[18]                   : AB4       : output : 2.5 V             :         : 2         : N              
+breg_in[24]                  : AB5       : output : 2.5 V             :         : 2         : N              
+inst[22]                     : AB6       : output : 2.5 V             :         : 2         : N              
+atualPC[16]                  : AB7       : output : 2.5 V             :         : 3         : N              
+novoPC[11]                   : AB8       : output : 2.5 V             :         : 3         : N              
+novoPC[24]                   : AB9       : output : 2.5 V             :         : 3         : N              
+novoPC[30]                   : AB10      : output : 2.5 V             :         : 3         : N              
+novoPC[2]                    : AB11      : output : 2.5 V             :         : 3         : N              
+ula_in2[28]                  : AB12      : output : 2.5 V             :         : 3         : N              
+novoPC[13]                   : AB13      : output : 2.5 V             :         : 3         : N              
+dado[18]                     : AB14      : output : 2.5 V             :         : 3         : N              
+breg_in[10]                  : AB15      : output : 2.5 V             :         : 4         : N              
+breg_in[21]                  : AB16      : output : 2.5 V             :         : 4         : N              
+imed_p2muxed[15]             : AB17      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AB18      :        :                   :         : 4         :                
+RESERVED_INPUT               : AB19      :        :                   :         : 4         :                
+imed_p2muxed[8]              : AB20      : output : 2.5 V             :         : 4         : N              
+imed_p2muxed[13]             : AB21      : output : 2.5 V             :         : 4         : N              
+imed[25]                     : AB22      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AB23      :        :                   :         : 5         :                
+RESERVED_INPUT               : AB24      :        :                   :         : 5         :                
+inst[6]                      : AB25      : output : 2.5 V             :         : 5         : N              
+inst[10]                     : AB26      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : AB27      :        :                   :         : 5         :                
+inst[28]                     : AB28      : output : 2.5 V             :         : 5         : N              
+atualPC[31]                  : AC1       : output : 2.5 V             :         : 2         : N              
+atualPC[20]                  : AC2       : output : 2.5 V             :         : 2         : N              
+atualPC[24]                  : AC3       : output : 2.5 V             :         : 2         : N              
+dado[24]                     : AC4       : output : 2.5 V             :         : 2         : N              
+novoPC[10]                   : AC5       : output : 2.5 V             :         : 2         : N              
+GND                          : AC6       : gnd    :                   :         :           :                
+rl1out[14]                   : AC7       : output : 2.5 V             :         : 3         : N              
+dado[9]                      : AC8       : output : 2.5 V             :         : 3         : N              
+GND                          : AC9       : gnd    :                   :         :           :                
+novoPC[16]                   : AC10      : output : 2.5 V             :         : 3         : N              
+ula_in2[8]                   : AC11      : output : 2.5 V             :         : 3         : N              
+ula_in2[30]                  : AC12      : output : 2.5 V             :         : 3         : N              
+GND                          : AC13      : gnd    :                   :         :           :                
+novoPC[23]                   : AC14      : output : 2.5 V             :         : 3         : N              
+ulares[28]                   : AC15      : output : 2.5 V             :         : 4         : N              
+GND                          : AC16      : gnd    :                   :         :           :                
+rl2[3]                       : AC17      : output : 2.5 V             :         : 4         : N              
+inst[11]                     : AC18      : output : 2.5 V             :         : 4         : N              
+imed[11]                     : AC19      : output : 2.5 V             :         : 4         : N              
+GND                          : AC20      : gnd    :                   :         :           :                
+imed[5]                      : AC21      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AC22      :        :                   :         : 4         :                
+GND                          : AC23      : gnd    :                   :         :           :                
+RESERVED_INPUT               : AC24      :        :                   :         : 5         :                
+RESERVED_INPUT               : AC25      :        :                   :         : 5         :                
+RESERVED_INPUT               : AC26      :        :                   :         : 5         :                
+imed[22]                     : AC27      : output : 2.5 V             :         : 5         : N              
+imed_p2muxed[5]              : AC28      : output : 2.5 V             :         : 5         : N              
+rl1out[8]                    : AD1       : output : 2.5 V             :         : 2         : N              
+imed[1]                      : AD2       : output : 2.5 V             :         : 2         : N              
+imed_p2muxed[1]              : AD3       : output : 2.5 V             :         : 2         : N              
+imed[2]                      : AD4       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT               : AD5       :        :                   :         : 3         :                
+VCCIO3                       : AD6       : power  :                   : 2.5V    : 3         :                
+rl1[3]                       : AD7       : output : 2.5 V             :         : 3         : N              
+breg_in[4]                   : AD8       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AD9       : power  :                   : 2.5V    : 3         :                
+novoPC[3]                    : AD10      : output : 2.5 V             :         : 3         : N              
+ula_in2[27]                  : AD11      : output : 2.5 V             :         : 3         : N              
+rl2out[9]                    : AD12      : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AD13      : power  :                   : 2.5V    : 3         :                
+dado[28]                     : AD14      : output : 2.5 V             :         : 3         : N              
+rl1out[0]                    : AD15      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AD16      : power  :                   : 2.5V    : 4         :                
+breg_in[20]                  : AD17      : output : 2.5 V             :         : 4         : N              
+imed[30]                     : AD18      : output : 2.5 V             :         : 4         : N              
+imed[27]                     : AD19      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
+imed[19]                     : AD21      : output : 2.5 V             :         : 4         : N              
+imed_p2muxed[25]             : AD22      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AD23      : power  :                   : 2.5V    : 4         :                
+imed_p2muxed[16]             : AD24      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AD25      :        :                   :         : 4         :                
+RESERVED_INPUT               : AD26      :        :                   :         : 5         :                
+imed[17]                     : AD27      : output : 2.5 V             :         : 5         : N              
+inst[27]                     : AD28      : output : 2.5 V             :         : 5         : N              
+dado[5]                      : AE1       : output : 2.5 V             :         : 2         : N              
+rl1out[21]                   : AE2       : output : 2.5 V             :         : 2         : N              
+rl2[2]                       : AE3       : output : 2.5 V             :         : 2         : N              
+imed_p2muxed[28]             : AE4       : output : 2.5 V             :         : 3         : N              
+imed_p2muxed[22]             : AE5       : output : 2.5 V             :         : 3         : N              
+rl1[1]                       : AE6       : output : 2.5 V             :         : 3         : N              
+dado[13]                     : AE7       : output : 2.5 V             :         : 3         : N              
+novoPC[28]                   : AE8       : output : 2.5 V             :         : 3         : N              
+novoPC[9]                    : AE9       : output : 2.5 V             :         : 3         : N              
+novoPC[15]                   : AE10      : output : 2.5 V             :         : 3         : N              
+ulares[9]                    : AE11      : output : 2.5 V             :         : 3         : N              
+novoPC[29]                   : AE12      : output : 2.5 V             :         : 3         : N              
+rl1out[26]                   : AE13      : output : 2.5 V             :         : 3         : N              
+rl2out[8]                    : AE14      : output : 2.5 V             :         : 3         : N              
+rl1out[28]                   : AE15      : output : 2.5 V             :         : 4         : N              
+novoPC[25]                   : AE16      : output : 2.5 V             :         : 4         : N              
+dado[19]                     : AE17      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AE18      :        :                   :         : 4         :                
+ALUOp[1]                     : AE19      : output : 2.5 V             :         : 4         : N              
+imed_p2muxed[20]             : AE20      : output : 2.5 V             :         : 4         : N              
+inst[12]                     : AE21      : output : 2.5 V             :         : 4         : N              
+inst[2]                      : AE22      : output : 2.5 V             :         : 4         : N              
+imed_p2muxed[26]             : AE23      : output : 2.5 V             :         : 4         : N              
+rl2[4]                       : AE24      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AE25      :        :                   :         : 4         :                
+inst[9]                      : AE26      : output : 2.5 V             :         : 5         : N              
+inst[31]                     : AE27      : output : 2.5 V             :         : 5         : N              
+imed_p2muxed[31]             : AE28      : output : 2.5 V             :         : 5         : N              
+GND                          : AF1       : gnd    :                   :         :           :                
+novoPC[26]                   : AF2       : output : 2.5 V             :         : 2         : N              
+imed_p2muxed[24]             : AF3       : output : 2.5 V             :         : 3         : N              
+imed_p2muxed[2]              : AF4       : output : 2.5 V             :         : 3         : N              
+inst[16]                     : AF5       : output : 2.5 V             :         : 3         : N              
+novoPC[27]                   : AF6       : output : 2.5 V             :         : 3         : N              
+ula_in2[13]                  : AF7       : output : 2.5 V             :         : 3         : N              
+novoPC[0]                    : AF8       : output : 2.5 V             :         : 3         : N              
+atualPC[10]                  : AF9       : output : 2.5 V             :         : 3         : N              
+atualPC[3]                   : AF10      : output : 2.5 V             :         : 3         : N              
+z                            : AF11      : output : 2.5 V             :         : 3         : N              
+novoPC[14]                   : AF12      : output : 2.5 V             :         : 3         : N              
+ulares[26]                   : AF13      : output : 2.5 V             :         : 3         : N              
+ula_in2[17]                  : AF14      : output : 2.5 V             :         : 3         : N              
+novoPC[20]                   : AF15      : output : 2.5 V             :         : 4         : N              
+rl1out[29]                   : AF16      : output : 2.5 V             :         : 4         : N              
+novoPC[19]                   : AF17      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AF18      :        :                   :         : 4         :                
+ALUOp[2]                     : AF19      : output : 2.5 V             :         : 4         : N              
+Tipo_Branch[2]               : AF20      : output : 2.5 V             :         : 4         : N              
+Tipo_Branch[1]               : AF21      : output : 2.5 V             :         : 4         : N              
+imed[20]                     : AF22      : output : 2.5 V             :         : 4         : N              
+imed[15]                     : AF23      : output : 2.5 V             :         : 4         : N              
+inst[5]                      : AF24      : output : 2.5 V             :         : 4         : N              
+imed[18]                     : AF25      : output : 2.5 V             :         : 4         : N              
+imed_p2muxed[14]             : AF26      : output : 2.5 V             :         : 4         : N              
+inst[29]                     : AF27      : output : 2.5 V             :         : 5         : N              
+GND                          : AF28      : gnd    :                   :         :           :                
+VCCIO2                       : AG1       : power  :                   : 2.5V    : 2         :                
+GND                          : AG2       : gnd    :                   :         :           :                
+inst[18]                     : AG3       : output : 2.5 V             :         : 3         : N              
+atualPC[7]                   : AG4       : output : 2.5 V             :         : 3         : N              
+GND                          : AG5       : gnd    :                   :         :           :                
+inst[7]                      : AG6       : output : 2.5 V             :         : 3         : N              
+ulares[16]                   : AG7       : output : 2.5 V             :         : 3         : N              
+novoPC[4]                    : AG8       : output : 2.5 V             :         : 3         : N              
+GND                          : AG9       : gnd    :                   :         :           :                
+atualPC[30]                  : AG10      : output : 2.5 V             :         : 3         : N              
+novoPC[17]                   : AG11      : output : 2.5 V             :         : 3         : N              
+novoPC[31]                   : AG12      : output : 2.5 V             :         : 3         : N              
+GND                          : AG13      : gnd    :                   :         :           :                
+GND+                         : AG14      :        :                   :         : 3         :                
+GND+                         : AG15      :        :                   :         : 4         :                
+GND                          : AG16      : gnd    :                   :         :           :                
+rl1out[30]                   : AG17      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AG18      :        :                   :         : 4         :                
+rl2[0]                       : AG19      : output : 2.5 V             :         : 4         : N              
+GND                          : AG20      : gnd    :                   :         :           :                
+inst[23]                     : AG21      : output : 2.5 V             :         : 4         : N              
+imed[21]                     : AG22      : output : 2.5 V             :         : 4         : N              
+selSLT                       : AG23      : output : 2.5 V             :         : 4         : N              
+GND                          : AG24      : gnd    :                   :         :           :                
+imed[23]                     : AG25      : output : 2.5 V             :         : 4         : N              
+inst[26]                     : AG26      : output : 2.5 V             :         : 4         : N              
+GND                          : AG27      : gnd    :                   :         :           :                
+VCCIO5                       : AG28      : power  :                   : 2.5V    : 5         :                
+VCCIO3                       : AH2       : power  :                   : 2.5V    : 3         :                
+RESERVED_INPUT               : AH3       :        :                   :         : 3         :                
+dado[4]                      : AH4       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AH5       : power  :                   : 2.5V    : 3         :                
+rd[0]                        : AH6       : output : 2.5 V             :         : 3         : N              
+ulares[11]                   : AH7       : output : 2.5 V             :         : 3         : N              
+breg_in[13]                  : AH8       : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AH9       : power  :                   : 2.5V    : 3         :                
+atualPC[13]                  : AH10      : output : 2.5 V             :         : 3         : N              
+novoPC[1]                    : AH11      : output : 2.5 V             :         : 3         : N              
+breg_in[28]                  : AH12      : output : 2.5 V             :         : 3         : N              
+VCCIO3                       : AH13      : power  :                   : 2.5V    : 3         :                
+GND+                         : AH14      :        :                   :         : 3         :                
+GND+                         : AH15      :        :                   :         : 4         :                
+VCCIO4                       : AH16      : power  :                   : 2.5V    : 4         :                
+rl2out[3]                    : AH17      : output : 2.5 V             :         : 4         : N              
+dado[20]                     : AH18      : output : 2.5 V             :         : 4         : N              
+inst[20]                     : AH19      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
+breg_in[19]                  : AH21      : output : 2.5 V             :         : 4         : N              
+RESERVED_INPUT               : AH22      :        :                   :         : 4         :                
+RESERVED_INPUT               : AH23      :        :                   :         : 4         :                
+VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
+imed[9]                      : AH25      : output : 2.5 V             :         : 4         : N              
+rd[3]                        : AH26      : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : AH27      : power  :                   : 2.5V    : 4         :                
+VCCIO1                       : B1        : power  :                   : 2.5V    : 1         :                
+GND                          : B2        : gnd    :                   :         :           :                
+novoPC[8]                    : B3        : output : 2.5 V             :         : 8         : N              
+rl1out[7]                    : B4        : output : 2.5 V             :         : 8         : N              
+GND                          : B5        : gnd    :                   :         :           :                
+ula_in2[21]                  : B6        : output : 2.5 V             :         : 8         : N              
+memout[2]                    : B7        : output : 2.5 V             :         : 8         : N              
+ulares[7]                    : B8        : output : 2.5 V             :         : 8         : N              
+GND                          : B9        : gnd    :                   :         :           :                
+memout[16]                   : B10       : output : 2.5 V             :         : 8         : N              
+ulares[30]                   : B11       : output : 2.5 V             :         : 8         : N              
+GND                          : B12       : gnd    :                   :         :           :                
+GND                          : B13       : gnd    :                   :         :           :                
+GND+                         : B14       :        :                   :         : 8         :                
+GND+                         : B15       :        :                   :         : 7         :                
+GND                          : B16       : gnd    :                   :         :           :                
+rl1out[31]                   : B17       : output : 2.5 V             :         : 7         : N              
+dado[27]                     : B18       : output : 2.5 V             :         : 7         : N              
+memout[0]                    : B19       : output : 2.5 V             :         : 7         : N              
+GND                          : B20       : gnd    :                   :         :           :                
+imed_p2muxed[4]              : B21       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : B22       :        :                   :         : 7         :                
+RESERVED_INPUT               : B23       :        :                   :         : 7         :                
+GND                          : B24       : gnd    :                   :         :           :                
+RESERVED_INPUT               : B25       :        :                   :         : 7         :                
+inst[14]                     : B26       : output : 2.5 V             :         : 7         : N              
+GND                          : B27       : gnd    :                   :         :           :                
+VCCIO6                       : B28       : power  :                   : 2.5V    : 6         :                
+GND                          : C1        : gnd    :                   :         :           :                
+RESERVED_INPUT               : C2        :        :                   :         : 1         :                
+dado[31]                     : C3        : output : 2.5 V             :         : 8         : N              
+breg_in[16]                  : C4        : output : 2.5 V             :         : 8         : N              
+dado[16]                     : C5        : output : 2.5 V             :         : 8         : N              
+RESERVED_INPUT               : C6        :        :                   :         : 8         :                
+atualPC[23]                  : C7        : output : 2.5 V             :         : 8         : N              
+rl2out[22]                   : C8        : output : 2.5 V             :         : 8         : N              
+ula_in2[2]                   : C9        : output : 2.5 V             :         : 8         : N              
+rl1out[9]                    : C10       : output : 2.5 V             :         : 8         : N              
+ula_in2[29]                  : C11       : output : 2.5 V             :         : 8         : N              
+memout[25]                   : C12       : output : 2.5 V             :         : 8         : N              
+rl2out[31]                   : C13       : output : 2.5 V             :         : 8         : N              
+memout[30]                   : C14       : output : 2.5 V             :         : 8         : N              
+dado[26]                     : C15       : output : 2.5 V             :         : 7         : N              
+breg_in[7]                   : C16       : output : 2.5 V             :         : 7         : N              
+PCSrc                        : C17       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : C18       :        :                   :         : 7         :                
+imed_p2muxed[3]              : C19       : output : 2.5 V             :         : 7         : N              
+breg_in[1]                   : C20       : output : 2.5 V             :         : 7         : N              
+imed_p2muxed[29]             : C21       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : C22       :        :                   :         : 7         :                
+imed_p2muxed[10]             : C23       : output : 2.5 V             :         : 7         : N              
+Tipo_Branch[0]               : C24       : output : 2.5 V             :         : 7         : N              
+ALUOp[3]                     : C25       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : C26       :        :                   :         : 7         :                
+imed[14]                     : C27       : output : 2.5 V             :         : 6         : N              
+GND                          : C28       : gnd    :                   :         :           :                
+inst[21]                     : D1        : output : 2.5 V             :         : 1         : N              
+rl2[1]                       : D2        : output : 2.5 V             :         : 1         : N              
+GND                          : D3        : gnd    :                   :         :           :                
+novoPC[22]                   : D4        : output : 2.5 V             :         : 8         : N              
+ula_in2[6]                   : D5        : output : 2.5 V             :         : 8         : N              
+breg_in[11]                  : D6        : output : 2.5 V             :         : 8         : N              
+dado[11]                     : D7        : output : 2.5 V             :         : 8         : N              
+ulares[14]                   : D8        : output : 2.5 V             :         : 8         : N              
+memout[27]                   : D9        : output : 2.5 V             :         : 8         : N              
+rl1out[25]                   : D10       : output : 2.5 V             :         : 8         : N              
+ula_in2[0]                   : D11       : output : 2.5 V             :         : 8         : N              
+memout[15]                   : D12       : output : 2.5 V             :         : 8         : N              
+ula_in2[11]                  : D13       : output : 2.5 V             :         : 8         : N              
+rl2out[12]                   : D14       : output : 2.5 V             :         : 8         : N              
+breg_in[26]                  : D15       : output : 2.5 V             :         : 7         : N              
+dado[7]                      : D16       : output : 2.5 V             :         : 7         : N              
+ALUOp[0]                     : D17       : output : 2.5 V             :         : 7         : N              
+dado[1]                      : D18       : output : 2.5 V             :         : 7         : N              
+imed[3]                      : D19       : output : 2.5 V             :         : 7         : N              
+dado[15]                     : D20       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : D21       :        :                   :         : 7         :                
+inst[30]                     : D22       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : D23       :        :                   :         : 7         :                
+RESERVED_INPUT               : D24       :        :                   :         : 7         :                
+inst[3]                      : D25       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : D26       :        :                   :         : 6         :                
+imed[6]                      : D27       : output : 2.5 V             :         : 6         : N              
+imed[31]                     : D28       : output : 2.5 V             :         : 6         : N              
+dado[25]                     : E1        : output : 2.5 V             :         : 1         : N              
+~ALTERA_FLASH_nCE_nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP : E2        : input  : 2.5 V             :         : 1         : N              
+rl1[2]                       : E3        : output : 2.5 V             :         : 1         : N              
+RESERVED_INPUT               : E4        :        :                   :         : 8         :                
+breg_in[31]                  : E5        : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : E6        : power  :                   : 2.5V    : 8         :                
+dado[0]                      : E7        : output : 2.5 V             :         : 8         : N              
+rl2out[7]                    : E8        : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : E9        : power  :                   : 2.5V    : 8         :                
+ula_in2[18]                  : E10       : output : 2.5 V             :         : 8         : N              
+ula_in2[23]                  : E11       : output : 2.5 V             :         : 8         : N              
+rl2out[6]                    : E12       : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : E13       : power  :                   : 2.5V    : 8         :                
+ula_in2[15]                  : E14       : output : 2.5 V             :         : 8         : N              
+breg_in[30]                  : E15       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : E16       : power  :                   : 2.5V    : 7         :                
+dado[29]                     : E17       : output : 2.5 V             :         : 7         : N              
+imed_p2muxed[21]             : E18       : output : 2.5 V             :         : 7         : N              
+MemWrite                     : E19       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
+imed_p2muxed[27]             : E21       : output : 2.5 V             :         : 7         : N              
+imed_p2muxed[12]             : E22       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
+breg_in[15]                  : E24       : output : 2.5 V             :         : 7         : N              
+ALUSrc                       : E25       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : E26       :        :                   :         : 6         :                
+RESERVED_INPUT               : E27       :        :                   :         : 6         :                
+RESERVED_INPUT               : E28       :        :                   :         : 6         :                
+rl2out[2]                    : F1        : output : 2.5 V             :         : 1         : N              
+memout[1]                    : F2        : output : 2.5 V             :         : 1         : N              
+memout[29]                   : F3        : output : 2.5 V             :         : 1         : N              
+~ALTERA_ASDO_DATA1~ / RESERVED_INPUT_WITH_WEAK_PULLUP : F4        : input  : 2.5 V             :         : 1         : N              
+breg_in[12]                  : F5        : output : 2.5 V             :         : 1         : N              
+GND                          : F6        : gnd    :                   :         :           :                
+rl1out[5]                    : F7        : output : 2.5 V             :         : 8         : N              
+ula_in2[16]                  : F8        : output : 2.5 V             :         : 8         : N              
+GND                          : F9        : gnd    :                   :         :           :                
+atualPC[15]                  : F10       : output : 2.5 V             :         : 8         : N              
+ula_in2[5]                   : F11       : output : 2.5 V             :         : 8         : N              
+rl2out[18]                   : F12       : output : 2.5 V             :         : 8         : N              
+GND                          : F13       : gnd    :                   :         :           :                
+memout[4]                    : F14       : output : 2.5 V             :         : 8         : N              
+dado[30]                     : F15       : output : 2.5 V             :         : 7         : N              
+GND                          : F16       : gnd    :                   :         :           :                
+breg_in[29]                  : F17       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : F18       :        :                   :         : 7         :                
+RESERVED_INPUT               : F19       :        :                   :         : 7         :                
+GND                          : F20       : gnd    :                   :         :           :                
+SeltipoSouB                  : F21       : output : 2.5 V             :         : 7         : N              
+imed_p2muxed[6]              : F22       : output : 2.5 V             :         : 7         : N              
+GND                          : F23       : gnd    :                   :         :           :                
+RESERVED_INPUT               : F24       :        :                   :         : 6         :                
+RESERVED_INPUT               : F25       :        :                   :         : 6         :                
+RESERVED_INPUT               : F26       :        :                   :         : 6         :                
+RESERVED_INPUT               : F27       :        :                   :         : 6         :                
+RESERVED_INPUT               : F28       :        :                   :         : 6         :                
+memout[17]                   : G1        : output : 2.5 V             :         : 1         : N              
+rl2out[21]                   : G2        : output : 2.5 V             :         : 1         : N              
+breg_in[25]                  : G3        : output : 2.5 V             :         : 1         : N              
+memout[5]                    : G4        : output : 2.5 V             :         : 1         : N              
+dado[23]                     : G5        : output : 2.5 V             :         : 1         : N              
+breg_in[23]                  : G6        : output : 2.5 V             :         : 1         : N              
+rl2out[20]                   : G7        : output : 2.5 V             :         : 8         : N              
+rl2out[13]                   : G8        : output : 2.5 V             :         : 8         : N              
+breg_in[0]                   : G9        : output : 2.5 V             :         : 8         : N              
+ula_in2[22]                  : G10       : output : 2.5 V             :         : 8         : N              
+ula_in2[14]                  : G11       : output : 2.5 V             :         : 8         : N              
+ula_in2[19]                  : G12       : output : 2.5 V             :         : 8         : N              
+rl2out[4]                    : G13       : output : 2.5 V             :         : 8         : N              
+memout[13]                   : G14       : output : 2.5 V             :         : 8         : N              
+rl2out[28]                   : G15       : output : 2.5 V             :         : 7         : N              
+novoPC[7]                    : G16       : output : 2.5 V             :         : 7         : N              
+memout[7]                    : G17       : output : 2.5 V             :         : 7         : N              
+ula_in2[9]                   : G18       : output : 2.5 V             :         : 7         : N              
+ula_in2[4]                   : G19       : output : 2.5 V             :         : 7         : N              
+rl1out[15]                   : G20       : output : 2.5 V             :         : 7         : N              
+rl2out[17]                   : G21       : output : 2.5 V             :         : 7         : N              
+dado[22]                     : G22       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : G23       :        :                   :         : 6         :                
+RESERVED_INPUT               : G24       :        :                   :         : 6         :                
+imed[28]                     : G25       : output : 2.5 V             :         : 6         : N              
+inst[25]                     : G26       : output : 2.5 V             :         : 6         : N              
+rl1[4]                       : G27       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : G28       :        :                   :         : 6         :                
+VCCIO1                       : H1        : power  :                   : 2.5V    : 1         :                
+GND                          : H2        : gnd    :                   :         :           :                
+rd[1]                        : H3        : output : 2.5 V             :         : 1         : N              
+inst[8]                      : H4        : output : 2.5 V             :         : 1         : N              
+memout[11]                   : H5        : output : 2.5 V             :         : 1         : N              
+dado[12]                     : H6        : output : 2.5 V             :         : 1         : N              
+inst[17]                     : H7        : output : 2.5 V             :         : 1         : N              
+rl2out[14]                   : H8        : output : 2.5 V             :         : 8         : N              
+GNDA3                        : H9        : gnd    :                   :         :           :                
+ula_in2[20]                  : H10       : output : 2.5 V             :         : 8         : N              
+VCCIO8                       : H11       : power  :                   : 2.5V    : 8         :                
+ula_in2[10]                  : H12       : output : 2.5 V             :         : 8         : N              
+memout[18]                   : H13       : output : 2.5 V             :         : 8         : N              
+memout[3]                    : H14       : output : 2.5 V             :         : 8         : N              
+dado[8]                      : H15       : output : 2.5 V             :         : 7         : N              
+memout[23]                   : H16       : output : 2.5 V             :         : 7         : N              
+ula_in2[31]                  : H17       : output : 2.5 V             :         : 7         : N              
+VCCIO7                       : H18       : power  :                   : 2.5V    : 7         :                
+breg_in[22]                  : H19       : output : 2.5 V             :         : 7         : N              
+GNDA2                        : H20       : gnd    :                   :         :           :                
+memout[8]                    : H21       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT               : H22       :        :                   :         : 6         :                
+RESERVED_INPUT               : H23       :        :                   :         : 6         :                
+imed[10]                     : H24       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : H25       :        :                   :         : 6         :                
+RESERVED_INPUT               : H26       :        :                   :         : 6         :                
+GND                          : H27       : gnd    :                   :         :           :                
+VCCIO6                       : H28       : power  :                   : 2.5V    : 6         :                
+clk                          : J1        : input  : 2.5 V             :         : 1         : N              
+GND                          : J2        : gnd    :                   :         :           :                
+memout[20]                   : J3        : output : 2.5 V             :         : 1         : N              
+memout[31]                   : J4        : output : 2.5 V             :         : 1         : N              
+imed[0]                      : J5        : output : 2.5 V             :         : 1         : N              
+imed_p2muxed[0]              : J6        : output : 2.5 V             :         : 1         : N              
+rl2out[25]                   : J7        : output : 2.5 V             :         : 1         : N              
+VCCA3                        : J8        : power  :                   : 2.5V    :           :                
+VCCD_PLL3                    : J9        : power  :                   : 1.2V    :           :                
+ula_in2[1]                   : J10       : output : 2.5 V             :         : 8         : N              
+GND                          : J11       : gnd    :                   :         :           :                
+rl2out[5]                    : J12       : output : 2.5 V             :         : 8         : N              
+memout[19]                   : J13       : output : 2.5 V             :         : 8         : N              
+rl2out[30]                   : J14       : output : 2.5 V             :         : 8         : N              
+breg_in[8]                   : J15       : output : 2.5 V             :         : 7         : N              
+rl2out[24]                   : J16       : output : 2.5 V             :         : 7         : N              
+rl2out[26]                   : J17       : output : 2.5 V             :         : 7         : N              
+GND                          : J18       : gnd    :                   :         :           :                
+memout[26]                   : J19       : output : 2.5 V             :         : 7         : N              
+VCCD_PLL2                    : J20       : power  :                   : 1.2V    :           :                
+VCCA2                        : J21       : power  :                   : 2.5V    :           :                
+imed_p2muxed[30]             : J22       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : J23       :        :                   :         : 6         :                
+RESERVED_INPUT               : J24       :        :                   :         : 6         :                
+RESERVED_INPUT               : J25       :        :                   :         : 6         :                
+RESERVED_INPUT               : J26       :        :                   :         : 6         :                
+GND+                         : J27       :        :                   :         : 6         :                
+GND+                         : J28       :        :                   :         : 6         :                
+ulares[24]                   : K1        : output : 2.5 V             :         : 1         : N              
+ulares[18]                   : K2        : output : 2.5 V             :         : 1         : N              
+ulares[23]                   : K3        : output : 2.5 V             :         : 1         : N              
+memout[14]                   : K4        : output : 2.5 V             :         : 1         : N              
+VCCIO1                       : K5        : power  :                   : 2.5V    : 1         :                
+GND                          : K6        : gnd    :                   :         :           :                
+ulares[8]                    : K7        : output : 2.5 V             :         : 1         : N              
+ulares[4]                    : K8        : output : 2.5 V             :         : 1         : N              
+VCCINT                       : K9        : power  :                   : 1.2V    :           :                
+GND                          : K10       : gnd    :                   :         :           :                
+VCCINT                       : K11       : power  :                   : 1.2V    :           :                
+GND                          : K12       : gnd    :                   :         :           :                
+VCCINT                       : K13       : power  :                   : 1.2V    :           :                
+GND                          : K14       : gnd    :                   :         :           :                
+VCCINT                       : K15       : power  :                   : 1.2V    :           :                
+GND                          : K16       : gnd    :                   :         :           :                
+VCCINT                       : K17       : power  :                   : 1.2V    :           :                
+GND                          : K18       : gnd    :                   :         :           :                
+VCCINT                       : K19       : power  :                   : 1.2V    :           :                
+GND                          : K20       : gnd    :                   :         :           :                
+RESERVED_INPUT               : K21       :        :                   :         : 6         :                
+RESERVED_INPUT               : K22       :        :                   :         : 6         :                
+GND                          : K23       : gnd    :                   :         :           :                
+VCCIO6                       : K24       : power  :                   : 2.5V    : 6         :                
+imed[7]                      : K25       : output : 2.5 V             :         : 6         : N              
+rd[2]                        : K26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : K27       :        :                   :         : 6         :                
+RESERVED_INPUT               : K28       :        :                   :         : 6         :                
+rl2out[1]                    : L1        : output : 2.5 V             :         : 1         : N              
+ulares[5]                    : L2        : output : 2.5 V             :         : 1         : N              
+breg_in[6]                   : L3        : output : 2.5 V             :         : 1         : N              
+rl2out[0]                    : L4        : output : 2.5 V             :         : 1         : N              
+memout[22]                   : L5        : output : 2.5 V             :         : 1         : N              
+ulares[15]                   : L6        : output : 2.5 V             :         : 1         : N              
+rl2out[27]                   : L7        : output : 2.5 V             :         : 1         : N              
+rl1out[2]                    : L8        : output : 2.5 V             :         : 1         : N              
+GND                          : L9        : gnd    :                   :         :           :                
+VCCINT                       : L10       : power  :                   : 1.2V    :           :                
+GND                          : L11       : gnd    :                   :         :           :                
+VCCINT                       : L12       : power  :                   : 1.2V    :           :                
+GND                          : L13       : gnd    :                   :         :           :                
+VCCINT                       : L14       : power  :                   : 1.2V    :           :                
+GND                          : L15       : gnd    :                   :         :           :                
+VCCINT                       : L16       : power  :                   : 1.2V    :           :                
+GND                          : L17       : gnd    :                   :         :           :                
+VCCINT                       : L18       : power  :                   : 1.2V    :           :                
+GND                          : L19       : gnd    :                   :         :           :                
+VCCINT                       : L20       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT               : L21       :        :                   :         : 6         :                
+RESERVED_INPUT               : L22       :        :                   :         : 6         :                
+RESERVED_INPUT               : L23       :        :                   :         : 6         :                
+RESERVED_INPUT               : L24       :        :                   :         : 6         :                
+RESERVED_INPUT               : L25       :        :                   :         : 6         :                
+RESERVED_INPUT               : L26       :        :                   :         : 6         :                
+RESERVED_INPUT               : L27       :        :                   :         : 6         :                
+RESERVED_INPUT               : L28       :        :                   :         : 6         :                
+ulares[2]                    : M1        : output : 2.5 V             :         : 1         : N              
+ulares[1]                    : M2        : output : 2.5 V             :         : 1         : N              
+ulares[3]                    : M3        : output : 2.5 V             :         : 1         : N              
+dado[6]                      : M4        : output : 2.5 V             :         : 1         : N              
+rl1out[19]                   : M5        : output : 2.5 V             :         : 1         : N              
+nSTATUS                      : M6        :        :                   :         : 1         :                
+ulares[13]                   : M7        : output : 2.5 V             :         : 1         : N              
+rl2out[10]                   : M8        : output : 2.5 V             :         : 1         : N              
+VCCINT                       : M9        : power  :                   : 1.2V    :           :                
+GND                          : M10       : gnd    :                   :         :           :                
+VCCINT                       : M11       : power  :                   : 1.2V    :           :                
+GND                          : M12       : gnd    :                   :         :           :                
+VCCINT                       : M13       : power  :                   : 1.2V    :           :                
+GND                          : M14       : gnd    :                   :         :           :                
+VCCINT                       : M15       : power  :                   : 1.2V    :           :                
+GND                          : M16       : gnd    :                   :         :           :                
+VCCINT                       : M17       : power  :                   : 1.2V    :           :                
+GND                          : M18       : gnd    :                   :         :           :                
+VCCINT                       : M19       : power  :                   : 1.2V    :           :                
+GND                          : M20       : gnd    :                   :         :           :                
+imed_p2muxed[19]             : M21       : output : 2.5 V             :         : 6         : N              
+MSEL2                        : M22       :        :                   :         : 6         :                
+rl1out[4]                    : M23       : output : 2.5 V             :         : 6         : N              
+rl2out[19]                   : M24       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT               : M25       :        :                   :         : 6         :                
+memout[10]                   : M26       : output : 2.5 V             :         : 6         : N              
+memout[9]                    : M27       : output : 2.5 V             :         : 6         : N              
+rl2out[16]                   : M28       : output : 2.5 V             :         : 6         : N              
+VCCIO1                       : N1        : power  :                   : 2.5V    : 1         :                
+GND                          : N2        : gnd    :                   :         :           :                
+rl1out[16]                   : N3        : output : 2.5 V             :         : 1         : N              
+rl2out[29]                   : N4        : output : 2.5 V             :         : 1         : N              
+VCCIO1                       : N5        : power  :                   : 2.5V    : 1         :                
+GND                          : N6        : gnd    :                   :         :           :                
+~ALTERA_DATA0~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 2.5 V             :         : 1         : N              
+inst[4]                      : N8        : output : 2.5 V             :         : 1         : N              
+GND                          : N9        : gnd    :                   :         :           :                
+VCCINT                       : N10       : power  :                   : 1.2V    :           :                
+GND                          : N11       : gnd    :                   :         :           :                
+VCCINT                       : N12       : power  :                   : 1.2V    :           :                
+GND                          : N13       : gnd    :                   :         :           :                
+VCCINT                       : N14       : power  :                   : 1.2V    :           :                
+GND                          : N15       : gnd    :                   :         :           :                
+VCCINT                       : N16       : power  :                   : 1.2V    :           :                
+GND                          : N17       : gnd    :                   :         :           :                
+VCCINT                       : N18       : power  :                   : 1.2V    :           :                
+GND                          : N19       : gnd    :                   :         :           :                
+VCCINT                       : N20       : power  :                   : 1.2V    :           :                
+rl2out[15]                   : N21       : output : 2.5 V             :         : 6         : N              
+MSEL0                        : N22       :        :                   :         : 6         :                
+GND                          : N23       : gnd    :                   :         :           :                
+VCCIO6                       : N24       : power  :                   : 2.5V    : 6         :                
+memout[24]                   : N25       : output : 2.5 V             :         : 6         : N              
+rl1out[3]                    : N26       : output : 2.5 V             :         : 6         : N              
+GND                          : N27       : gnd    :                   :         :           :                
+VCCIO6                       : N28       : power  :                   : 2.5V    : 6         :                
+MemToReg                     : P1        : output : 2.5 V             :         : 1         : N              
+ulares[19]                   : P2        : output : 2.5 V             :         : 1         : N              
+~ALTERA_DCLK~                : P3        : output : 2.5 V             :         : 1         : N              
+nCONFIG                      : P4        :        :                   :         : 1         :                
+TCK                          : P5        : input  :                   :         : 1         :                
+TDO                          : P6        : output :                   :         : 1         :                
+TDI                          : P7        : input  :                   :         : 1         :                
+TMS                          : P8        : input  :                   :         : 1         :                
+VCCINT                       : P9        : power  :                   : 1.2V    :           :                
+GND                          : P10       : gnd    :                   :         :           :                
+VCCINT                       : P11       : power  :                   : 1.2V    :           :                
+GND                          : P12       : gnd    :                   :         :           :                
+VCCINT                       : P13       : power  :                   : 1.2V    :           :                
+GND                          : P14       : gnd    :                   :         :           :                
+VCCINT                       : P15       : power  :                   : 1.2V    :           :                
+GND                          : P16       : gnd    :                   :         :           :                
+VCCINT                       : P17       : power  :                   : 1.2V    :           :                
+GND                          : P18       : gnd    :                   :         :           :                
+VCCINT                       : P19       : power  :                   : 1.2V    :           :                
+GND                          : P20       : gnd    :                   :         :           :                
+ulares[27]                   : P21       : output : 2.5 V             :         : 5         : N              
+MSEL3                        : P22       :        :                   :         : 6         :                
+MSEL1                        : P23       :        :                   :         : 6         :                
+CONF_DONE                    : P24       :        :                   :         : 6         :                
+ula_in2[24]                  : P25       : output : 2.5 V             :         : 6         : N              
+ula_in2[3]                   : P26       : output : 2.5 V             :         : 6         : N              
+rl1out[6]                    : P27       : output : 2.5 V             :         : 6         : N              
+~ALTERA_nCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : P28       : output : 2.5 V             :         : 6         : N              
+atualPC[4]                   : R1        : output : 2.5 V             :         : 2         : N              
+atualPC[0]                   : R2        : output : 2.5 V             :         : 2         : N              
+atualPC[8]                   : R3        : output : 2.5 V             :         : 2         : N              
+ulares[0]                    : R4        : output : 2.5 V             :         : 2         : N              
+atualPC[26]                  : R5        : output : 2.5 V             :         : 2         : N              
+atualPC[14]                  : R6        : output : 2.5 V             :         : 2         : N              
+atualPC[5]                   : R7        : output : 2.5 V             :         : 2         : N              
+nCE                          : R8        :        :                   :         : 1         :                
+GND                          : R9        : gnd    :                   :         :           :                
+VCCINT                       : R10       : power  :                   : 1.2V    :           :                
+GND                          : R11       : gnd    :                   :         :           :                
+VCCINT                       : R12       : power  :                   : 1.2V    :           :                
+GND                          : R13       : gnd    :                   :         :           :                
+VCCINT                       : R14       : power  :                   : 1.2V    :           :                
+GND                          : R15       : gnd    :                   :         :           :                
+VCCINT                       : R16       : power  :                   : 1.2V    :           :                
+GND                          : R17       : gnd    :                   :         :           :                
+VCCINT                       : R18       : power  :                   : 1.2V    :           :                
+GND                          : R19       : gnd    :                   :         :           :                
+VCCINT                       : R20       : power  :                   : 1.2V    :           :                
+ulares[29]                   : R21       : output : 2.5 V             :         : 5         : N              
+rl1out[13]                   : R22       : output : 2.5 V             :         : 5         : N              
+memout[28]                   : R23       : output : 2.5 V             :         : 5         : N              
+memout[12]                   : R24       : output : 2.5 V             :         : 5         : N              
+breg_in[14]                  : R25       : output : 2.5 V             :         : 5         : N              
+dado[14]                     : R26       : output : 2.5 V             :         : 5         : N              
+ula_in2[26]                  : R27       : output : 2.5 V             :         : 5         : N              
+imed_p2muxed[9]              : R28       : output : 2.5 V             :         : 5         : N              
+VCCIO2                       : T1        : power  :                   : 2.5V    : 2         :                
+GND                          : T2        : gnd    :                   :         :           :                
+atualPC[1]                   : T3        : output : 2.5 V             :         : 2         : N              
+atualPC[2]                   : T4        : output : 2.5 V             :         : 2         : N              
+VCCIO2                       : T5        : power  :                   : 2.5V    : 2         :                
+GND                          : T6        : gnd    :                   :         :           :                
+atualPC[12]                  : T7        : output : 2.5 V             :         : 2         : N              
+ulares[12]                   : T8        : output : 2.5 V             :         : 2         : N              
+VCCINT                       : T9        : power  :                   : 1.2V    :           :                
+GND                          : T10       : gnd    :                   :         :           :                
+VCCINT                       : T11       : power  :                   : 1.2V    :           :                
+GND                          : T12       : gnd    :                   :         :           :                
+VCCINT                       : T13       : power  :                   : 1.2V    :           :                
+GND                          : T14       : gnd    :                   :         :           :                
+VCCINT                       : T15       : power  :                   : 1.2V    :           :                
+GND                          : T16       : gnd    :                   :         :           :                
+VCCINT                       : T17       : power  :                   : 1.2V    :           :                
+GND                          : T18       : gnd    :                   :         :           :                
+VCCINT                       : T19       : power  :                   : 1.2V    :           :                
+GND                          : T20       : gnd    :                   :         :           :                
+RESERVED_INPUT               : T21       :        :                   :         : 5         :                
+rl1out[12]                   : T22       : output : 2.5 V             :         : 5         : N              
+GND                          : T23       : gnd    :                   :         :           :                
+VCCIO5                       : T24       : power  :                   : 2.5V    : 5         :                
+RESERVED_INPUT               : T25       :        :                   :         : 5         :                
+RESERVED_INPUT               : T26       :        :                   :         : 5         :                
+GND                          : T27       : gnd    :                   :         :           :                
+VCCIO5                       : T28       : power  :                   : 2.5V    : 5         :                
+atualPC[29]                  : U1        : output : 2.5 V             :         : 2         : N              
+atualPC[27]                  : U2        : output : 2.5 V             :         : 2         : N              
+atualPC[11]                  : U3        : output : 2.5 V             :         : 2         : N              
+atualPC[6]                   : U4        : output : 2.5 V             :         : 2         : N              
+atualPC[19]                  : U5        : output : 2.5 V             :         : 2         : N              
+ulares[20]                   : U6        : output : 2.5 V             :         : 2         : N              
+rl1out[17]                   : U7        : output : 2.5 V             :         : 2         : N              
+memout[21]                   : U8        : output : 2.5 V             :         : 2         : N              
+GND                          : U9        : gnd    :                   :         :           :                
+VCCINT                       : U10       : power  :                   : 1.2V    :           :                
+GND                          : U11       : gnd    :                   :         :           :                
+VCCINT                       : U12       : power  :                   : 1.2V    :           :                
+GND                          : U13       : gnd    :                   :         :           :                
+VCCINT                       : U14       : power  :                   : 1.2V    :           :                
+GND                          : U15       : gnd    :                   :         :           :                
+VCCINT                       : U16       : power  :                   : 1.2V    :           :                
+GND                          : U17       : gnd    :                   :         :           :                
+VCCINT                       : U18       : power  :                   : 1.2V    :           :                
+GND                          : U19       : gnd    :                   :         :           :                
+VCCINT                       : U20       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT               : U21       :        :                   :         : 5         :                
+RESERVED_INPUT               : U22       :        :                   :         : 5         :                
+RESERVED_INPUT               : U23       :        :                   :         : 5         :                
+imed_p2muxed[7]              : U24       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : U25       :        :                   :         : 5         :                
+RESERVED_INPUT               : U26       :        :                   :         : 5         :                
+RESERVED_INPUT               : U27       :        :                   :         : 5         :                
+RESERVED_INPUT               : U28       :        :                   :         : 5         :                
+atualPC[9]                   : V1        : output : 2.5 V             :         : 2         : N              
+atualPC[18]                  : V2        : output : 2.5 V             :         : 2         : N              
+atualPC[22]                  : V3        : output : 2.5 V             :         : 2         : N              
+atualPC[17]                  : V4        : output : 2.5 V             :         : 2         : N              
+ulares[22]                   : V5        : output : 2.5 V             :         : 2         : N              
+breg_in[5]                   : V6        : output : 2.5 V             :         : 2         : N              
+dado[2]                      : V7        : output : 2.5 V             :         : 2         : N              
+rl1out[11]                   : V8        : output : 2.5 V             :         : 2         : N              
+VCCINT                       : V9        : power  :                   : 1.2V    :           :                
+GND                          : V10       : gnd    :                   :         :           :                
+VCCINT                       : V11       : power  :                   : 1.2V    :           :                
+GND                          : V12       : gnd    :                   :         :           :                
+VCCINT                       : V13       : power  :                   : 1.2V    :           :                
+GND                          : V14       : gnd    :                   :         :           :                
+VCCINT                       : V15       : power  :                   : 1.2V    :           :                
+GND                          : V16       : gnd    :                   :         :           :                
+VCCINT                       : V17       : power  :                   : 1.2V    :           :                
+GND                          : V18       : gnd    :                   :         :           :                
+VCCINT                       : V19       : power  :                   : 1.2V    :           :                
+GND                          : V20       : gnd    :                   :         :           :                
+RESERVED_INPUT               : V21       :        :                   :         : 5         :                
+RESERVED_INPUT               : V22       :        :                   :         : 5         :                
+RESERVED_INPUT               : V23       :        :                   :         : 5         :                
+imed_p2muxed[11]             : V24       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : V25       :        :                   :         : 5         :                
+RESERVED_INPUT               : V26       :        :                   :         : 5         :                
+imed[13]                     : V27       : output : 2.5 V             :         : 5         : N              
+inst[13]                     : V28       : output : 2.5 V             :         : 5         : N              
+ulares[10]                   : W1        : output : 2.5 V             :         : 2         : N              
+atualPC[25]                  : W2        : output : 2.5 V             :         : 2         : N              
+breg_in[2]                   : W3        : output : 2.5 V             :         : 2         : N              
+novoPC[5]                    : W4        : output : 2.5 V             :         : 2         : N              
+VCCIO2                       : W5        : power  :                   : 2.5V    : 2         :                
+GND                          : W6        : gnd    :                   :         :           :                
+rl1out[22]                   : W7        : output : 2.5 V             :         : 2         : N              
+rl1out[1]                    : W8        : output : 2.5 V             :         : 2         : N              
+GND                          : W9        : gnd    :                   :         :           :                
+VCCINT                       : W10       : power  :                   : 1.2V    :           :                
+GND                          : W11       : gnd    :                   :         :           :                
+VCCINT                       : W12       : power  :                   : 1.2V    :           :                
+GND                          : W13       : gnd    :                   :         :           :                
+VCCINT                       : W14       : power  :                   : 1.2V    :           :                
+GND                          : W15       : gnd    :                   :         :           :                
+VCCINT                       : W16       : power  :                   : 1.2V    :           :                
+GND                          : W17       : gnd    :                   :         :           :                
+VCCINT                       : W18       : power  :                   : 1.2V    :           :                
+GND                          : W19       : gnd    :                   :         :           :                
+VCCINT                       : W20       : power  :                   : 1.2V    :           :                
+RESERVED_INPUT               : W21       :        :                   :         : 5         :                
+inst[19]                     : W22       : output : 2.5 V             :         : 5         : N              
+GND                          : W23       : gnd    :                   :         :           :                
+VCCIO5                       : W24       : power  :                   : 2.5V    : 5         :                
+RESERVED_INPUT               : W25       :        :                   :         : 5         :                
+RESERVED_INPUT               : W26       :        :                   :         : 5         :                
+imed[16]                     : W27       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : W28       :        :                   :         : 5         :                
+GND+                         : Y1        :        :                   :         : 2         :                
+GND+                         : Y2        :        :                   :         : 2         :                
+rl1out[20]                   : Y3        : output : 2.5 V             :         : 2         : N              
+ulares[6]                    : Y4        : output : 2.5 V             :         : 2         : N              
+inst[15]                     : Y5        : output : 2.5 V             :         : 2         : N              
+rl1[0]                       : Y6        : output : 2.5 V             :         : 2         : N              
+ulares[25]                   : Y7        : output : 2.5 V             :         : 2         : N              
+VCCA1                        : Y8        : power  :                   : 2.5V    :           :                
+VCCD_PLL1                    : Y9        : power  :                   : 1.2V    :           :                
+novoPC[21]                   : Y10       : output : 2.5 V             :         : 3         : N              
+GND                          : Y11       : gnd    :                   :         :           :                
+breg_in[3]                   : Y12       : output : 2.5 V             :         : 3         : N              
+dado[17]                     : Y13       : output : 2.5 V             :         : 3         : N              
+ulares[31]                   : Y14       : output : 2.5 V             :         : 3         : N              
+n                            : Y15       : output : 2.5 V             :         : 3         : N              
+imed[26]                     : Y16       : output : 2.5 V             :         : 4         : N              
+imed[29]                     : Y17       : output : 2.5 V             :         : 4         : N              
+GND                          : Y18       : gnd    :                   :         :           :                
+imed[8]                      : Y19       : output : 2.5 V             :         : 4         : N              
+VCCD_PLL4                    : Y20       : power  :                   : 1.2V    :           :                
+VCCA4                        : Y21       : power  :                   : 2.5V    :           :                
+RESERVED_INPUT               : Y22       :        :                   :         : 5         :                
+RESERVED_INPUT               : Y23       :        :                   :         : 5         :                
+rd[4]                        : Y24       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT               : Y25       :        :                   :         : 5         :                
+inst[24]                     : Y26       : output : 2.5 V             :         : 5         : N              
+GND+                         : Y27       :        :                   :         : 5         :                
+GND+                         : Y28       :        :                   :         : 5         :                

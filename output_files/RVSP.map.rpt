@@ -1,0 +1,1221 @@
+Analysis & Synthesis report for RVSP
+Fri Nov 27 07:28:29 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Registers Added for RAM Pass-Through Logic
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for banco_regs:br|altsyncram:x_rtl_0|altsyncram_kcc1:auto_generated
+ 16. Source assignments for banco_regs:br|altsyncram:x_rtl_1|altsyncram_kcc1:auto_generated
+ 17. Source assignments for data_mem_ram:md|altsyncram:ram_rtl_0|altsyncram_eec1:auto_generated
+ 18. Parameter Settings for User Entity Instance: mem_inst:mi
+ 19. Parameter Settings for User Entity Instance: data_mem_ram:md
+ 20. Parameter Settings for Inferred Entity Instance: banco_regs:br|altsyncram:x_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: banco_regs:br|altsyncram:x_rtl_1
+ 22. Parameter Settings for Inferred Entity Instance: data_mem_ram:md|altsyncram:ram_rtl_0
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. Port Connectivity Checks: "data_mem_ram:md"
+ 25. Port Connectivity Checks: "gera_imediato:gi"
+ 26. Port Connectivity Checks: "mux_gimm:mgi"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Nov 27 07:28:29 2020       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; RVSP                                        ;
+; Top-level Entity Name              ; testa_unid_controle                         ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 394                                         ;
+;     Total combinational functions  ; 345                                         ;
+;     Dedicated logic registers      ; 127                                         ;
+; Total registers                    ; 127                                         ;
+; Total pins                         ; 416                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 4,032                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                         ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Option                                                                     ; Setting             ; Default Value      ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7       ;                    ;
+; Top-level entity name                                                      ; testa_unid_controle ; RVSP               ;
+; Family name                                                                ; Cyclone IV E        ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                 ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                 ;
+; Enable compact report table                                                ; Off                 ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                ;
+; Preserve fewer node names                                                  ; On                  ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable              ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                ; Auto               ;
+; Safe State Machine                                                         ; Off                 ; Off                ;
+; Extract Verilog State Machines                                             ; On                  ; On                 ;
+; Extract VHDL State Machines                                                ; On                  ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                  ; On                 ;
+; Parallel Synthesis                                                         ; On                  ; On                 ;
+; DSP Block Balancing                                                        ; Auto                ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                  ; On                 ;
+; Power-Up Don't Care                                                        ; On                  ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                ;
+; Remove Duplicate Registers                                                 ; On                  ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                ;
+; Optimization Technique                                                     ; Balanced            ; Balanced           ;
+; Carry Chain Length                                                         ; 70                  ; 70                 ;
+; Auto Carry Chains                                                          ; On                  ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                ;
+; Auto ROM Replacement                                                       ; On                  ; On                 ;
+; Auto RAM Replacement                                                       ; On                  ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                  ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                 ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                  ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                  ; On                 ;
+; Report Parameter Settings                                                  ; On                  ; On                 ;
+; Report Source Assignments                                                  ; On                  ; On                 ;
+; Report Connectivity Checks                                                 ; On                  ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation  ; Normal compilation ;
+; HDL message level                                                          ; Level2              ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                ;
+; Clock MUX Protection                                                       ; On                  ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                ;
+; Block Design Naming                                                        ; Auto                ; Auto               ;
+; SDC constraint protection                                                  ; Off                 ; Off                ;
+; Synthesis Effort                                                           ; Auto                ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                 ;
++----------------------------------------------------------------------------+---------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path           ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                           ; Library ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
+; banco_regs.v                               ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/banco_regs.v                               ;         ;
+; mem_inst_init.txt                          ; yes             ; User File                                             ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst_init.txt                          ;         ;
+; unid_controle.v                            ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v                            ;         ;
+; ULA.v                                      ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/ULA.v                                      ;         ;
+; testa_unid_controle.v                      ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v                      ;         ;
+; mux_ula.v                                  ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_ula.v                                  ;         ;
+; mux_memreg.v                               ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_memreg.v                               ;         ;
+; mux_gimm.v                                 ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_gimm.v                                 ;         ;
+; mux_breg_slt.v                             ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_breg_slt.v                             ;         ;
+; mux_branch_adder.v                         ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_branch_adder.v                         ;         ;
+; mem_inst.v                                 ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v                                 ;         ;
+; gerencia_PC.v                              ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/gerencia_PC.v                              ;         ;
+; gera_imediato.v                            ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/gera_imediato.v                            ;         ;
+; data_mem_ram.v                             ; yes             ; User Verilog HDL File                                 ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/data_mem_ram.v                             ;         ;
+; altsyncram.tdf                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
+; stratix_ram_block.inc                      ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
+; lpm_mux.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
+; lpm_decode.inc                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; aglobal171.inc                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                ;         ;
+; a_rdenreg.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
+; altrom.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/altrom.inc                    ;         ;
+; altram.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/altram.inc                    ;         ;
+; altdpram.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/17.1/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
+; db/altsyncram_kcc1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/db/altsyncram_kcc1.tdf                     ;         ;
+; db/altsyncram_eec1.tdf                     ; yes             ; Auto-Generated Megafunction                           ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/db/altsyncram_eec1.tdf                     ;         ;
+; db/RVSP.ram0_data_mem_ram_f5304155.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/fpelogia/Documentos/2020.2/LABES/RVSP/db/RVSP.ram0_data_mem_ram_f5304155.hdl.mif ;         ;
++--------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 394       ;
+;                                             ;           ;
+; Total combinational functions               ; 345       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 98        ;
+;     -- 3 input functions                    ; 203       ;
+;     -- <=2 input functions                  ; 44        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 251       ;
+;     -- arithmetic mode                      ; 94        ;
+;                                             ;           ;
+; Total registers                             ; 127       ;
+;     -- Dedicated logic registers            ; 127       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 416       ;
+; Total memory bits                           ; 4032      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 223       ;
+; Total fan-out                               ; 3054      ;
+; Average fan-out                             ; 2.18      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                  ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+---------------------+--------------+
+; |testa_unid_controle                      ; 345 (1)             ; 127 (0)                   ; 4032        ; 0            ; 0       ; 0         ; 416  ; 0            ; |testa_unid_controle                                                                     ; testa_unid_controle ; work         ;
+;    |ULA:unid_log_arit|                    ; 78 (78)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|ULA:unid_log_arit                                                   ; ULA                 ; work         ;
+;    |banco_regs:br|                        ; 78 (78)             ; 83 (83)                   ; 1984        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|banco_regs:br                                                       ; banco_regs          ; work         ;
+;       |altsyncram:x_rtl_0|                ; 0 (0)               ; 0 (0)                     ; 992         ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|banco_regs:br|altsyncram:x_rtl_0                                    ; altsyncram          ; work         ;
+;          |altsyncram_kcc1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 992         ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|banco_regs:br|altsyncram:x_rtl_0|altsyncram_kcc1:auto_generated     ; altsyncram_kcc1     ; work         ;
+;       |altsyncram:x_rtl_1|                ; 0 (0)               ; 0 (0)                     ; 992         ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|banco_regs:br|altsyncram:x_rtl_1                                    ; altsyncram          ; work         ;
+;          |altsyncram_kcc1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 992         ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|banco_regs:br|altsyncram:x_rtl_1|altsyncram_kcc1:auto_generated     ; altsyncram_kcc1     ; work         ;
+;    |data_mem_ram:md|                      ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|data_mem_ram:md                                                     ; data_mem_ram        ; work         ;
+;       |altsyncram:ram_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|data_mem_ram:md|altsyncram:ram_rtl_0                                ; altsyncram          ; work         ;
+;          |altsyncram_eec1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|data_mem_ram:md|altsyncram:ram_rtl_0|altsyncram_eec1:auto_generated ; altsyncram_eec1     ; work         ;
+;    |gerencia_PC:gpc|                      ; 0 (0)               ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|gerencia_PC:gpc                                                     ; gerencia_PC         ; work         ;
+;    |mem_inst:mi|                          ; 22 (22)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|mem_inst:mi                                                         ; mem_inst            ; work         ;
+;    |mux_branch_adder:mba|                 ; 97 (97)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|mux_branch_adder:mba                                                ; mux_branch_adder    ; work         ;
+;    |mux_gimm:mgi|                         ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|mux_gimm:mgi                                                        ; mux_gimm            ; work         ;
+;    |mux_memreg:mmr|                       ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|mux_memreg:mmr                                                      ; mux_memreg          ; work         ;
+;    |mux_ula:comb_19|                      ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|mux_ula:comb_19                                                     ; mux_ula             ; work         ;
+;    |unid_controle:uc|                     ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testa_unid_controle|unid_controle:uc                                                    ; unid_controle       ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                         ;
++--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+; Name                                                                           ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                        ;
++--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+; banco_regs:br|altsyncram:x_rtl_0|altsyncram_kcc1:auto_generated|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 31           ; 32           ; 31           ; 32           ; 992  ; None                                       ;
+; banco_regs:br|altsyncram:x_rtl_1|altsyncram_kcc1:auto_generated|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 31           ; 32           ; 31           ; 32           ; 992  ; None                                       ;
+; data_mem_ram:md|altsyncram:ram_rtl_0|altsyncram_eec1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port      ; 64           ; 32           ; --           ; --           ; 2048 ; db/RVSP.ram0_data_mem_ram_f5304155.hdl.mif ;
++--------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++----------------------------------------------------+----------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal        ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------+------------------------+
+; unid_controle:uc|ALUOp[0]                          ; unid_controle:uc|Selector4 ; yes                    ;
+; unid_controle:uc|ALUSrc                            ; unid_controle:uc|Selector4 ; yes                    ;
+; unid_controle:uc|SeltipoSouB                       ; unid_controle:uc|Selector4 ; yes                    ;
+; unid_controle:uc|MemToReg                          ; unid_controle:uc|Selector4 ; yes                    ;
+; unid_controle:uc|PCSrc                             ; unid_controle:uc|Selector4 ; yes                    ;
+; unid_controle:uc|regWrite                          ; unid_controle:uc|Selector4 ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                            ;                        ;
++----------------------------------------------------+----------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; mem_inst:mi|saida[2,3,13,14,19,23,24]  ; Stuck at GND due to stuck port data_in ;
+; banco_regs:br|x_rtl_0_bypass[10]       ; Stuck at GND due to stuck port data_in ;
+; banco_regs:br|x_rtl_1_bypass[8,10]     ; Stuck at GND due to stuck port data_in ;
+; mem_inst:mi|saida[5,6,10..12,25..31]   ; Merged with mem_inst:mi|saida[9]       ;
+; mem_inst:mi|saida[1]                   ; Merged with mem_inst:mi|saida[0]       ;
+; Total Number of Removed Registers = 23 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 127   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic               ;
++----------------------------------+-----------------------+
+; Register Name                    ; RAM Name              ;
++----------------------------------+-----------------------+
+; banco_regs:br|x_rtl_0_bypass[0]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[1]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[2]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[3]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[4]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[5]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[6]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[7]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[8]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[9]  ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[10] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[11] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[12] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[13] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[14] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[15] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[16] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[17] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[18] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[19] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[20] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[21] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[22] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[23] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[24] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[25] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[26] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[27] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[28] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[29] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[30] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[31] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[32] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[33] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[34] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[35] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[36] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[37] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[38] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[39] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[40] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[41] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_0_bypass[42] ; banco_regs:br|x_rtl_0 ;
+; banco_regs:br|x_rtl_1_bypass[0]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[1]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[2]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[3]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[4]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[5]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[6]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[7]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[8]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[9]  ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[10] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[11] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[12] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[13] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[14] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[15] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[16] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[17] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[18] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[19] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[20] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[21] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[22] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[23] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[24] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[25] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[26] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[27] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[28] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[29] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[30] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[31] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[32] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[33] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[34] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[35] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[36] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[37] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[38] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[39] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[40] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[41] ; banco_regs:br|x_rtl_1 ;
+; banco_regs:br|x_rtl_1_bypass[42] ; banco_regs:br|x_rtl_1 ;
++----------------------------------+-----------------------+
+
+
++-----------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                    ;
++------------------------------+---------------------------+------+
+; Register Name                ; Megafunction              ; Type ;
++------------------------------+---------------------------+------+
+; data_mem_ram:md|saida[0..31] ; data_mem_ram:md|ram_rtl_0 ; RAM  ;
++------------------------------+---------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; No         ; |testa_unid_controle|mux_branch_adder:mba|novoPC[7] ;
+; 33:1               ; 2 bits    ; 44 LEs        ; 14 LEs               ; 30 LEs                 ; No         ; |testa_unid_controle|unid_controle:uc|Selector7     ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux12        ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux23        ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux7         ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux26        ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux3         ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux28        ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux0         ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; No         ; |testa_unid_controle|ULA:unid_log_arit|Mux30        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Source assignments for banco_regs:br|altsyncram:x_rtl_0|altsyncram_kcc1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------+
+; Assignment                      ; Value              ; From ; To                       ;
++---------------------------------+--------------------+------+--------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                        ;
++---------------------------------+--------------------+------+--------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Source assignments for banco_regs:br|altsyncram:x_rtl_1|altsyncram_kcc1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------+
+; Assignment                      ; Value              ; From ; To                       ;
++---------------------------------+--------------------+------+--------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                        ;
++---------------------------------+--------------------+------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Source assignments for data_mem_ram:md|altsyncram:ram_rtl_0|altsyncram_eec1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------+
+; Assignment                      ; Value              ; From ; To                           ;
++---------------------------------+--------------------+------+------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                            ;
++---------------------------------+--------------------+------+------------------------------+
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mem_inst:mi ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                  ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: data_mem_ram:md ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                      ;
+; ADDR_WIDTH     ; 6     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: banco_regs:br|altsyncram:x_rtl_0 ;
++------------------------------------+----------------------+-----------------------+
+; Parameter Name                     ; Value                ; Type                  ;
++------------------------------------+----------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped               ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped               ;
+; WIDTH_A                            ; 32                   ; Untyped               ;
+; WIDTHAD_A                          ; 5                    ; Untyped               ;
+; NUMWORDS_A                         ; 31                   ; Untyped               ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped               ;
+; WIDTH_B                            ; 32                   ; Untyped               ;
+; WIDTHAD_B                          ; 5                    ; Untyped               ;
+; NUMWORDS_B                         ; 31                   ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped               ;
+; BYTE_SIZE                          ; 8                    ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped               ;
+; INIT_FILE                          ; UNUSED               ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped               ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_kcc1      ; Untyped               ;
++------------------------------------+----------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: banco_regs:br|altsyncram:x_rtl_1 ;
++------------------------------------+----------------------+-----------------------+
+; Parameter Name                     ; Value                ; Type                  ;
++------------------------------------+----------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped               ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped               ;
+; WIDTH_A                            ; 32                   ; Untyped               ;
+; WIDTHAD_A                          ; 5                    ; Untyped               ;
+; NUMWORDS_A                         ; 31                   ; Untyped               ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped               ;
+; WIDTH_B                            ; 32                   ; Untyped               ;
+; WIDTHAD_B                          ; 5                    ; Untyped               ;
+; NUMWORDS_B                         ; 31                   ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped               ;
+; BYTE_SIZE                          ; 8                    ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped               ;
+; INIT_FILE                          ; UNUSED               ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped               ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_kcc1      ; Untyped               ;
++------------------------------------+----------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_mem_ram:md|altsyncram:ram_rtl_0            ;
++------------------------------------+--------------------------------------------+----------------+
+; Parameter Name                     ; Value                                      ; Type           ;
++------------------------------------+--------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                          ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                         ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                        ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                         ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                        ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                          ; Untyped        ;
+; OPERATION_MODE                     ; SINGLE_PORT                                ; Untyped        ;
+; WIDTH_A                            ; 32                                         ; Untyped        ;
+; WIDTHAD_A                          ; 6                                          ; Untyped        ;
+; NUMWORDS_A                         ; 64                                         ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                               ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                       ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                       ; Untyped        ;
+; WIDTH_B                            ; 1                                          ; Untyped        ;
+; WIDTHAD_B                          ; 1                                          ; Untyped        ;
+; NUMWORDS_B                         ; 1                                          ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                     ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                     ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                     ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                               ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                     ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                       ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                       ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                       ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                       ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                          ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                          ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                       ; Untyped        ;
+; BYTE_SIZE                          ; 8                                          ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA                                   ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                       ; Untyped        ;
+; INIT_FILE                          ; db/RVSP.ram0_data_mem_ram_f5304155.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                     ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                     ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                            ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                      ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                      ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                          ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                               ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_eec1                            ; Untyped        ;
++------------------------------------+--------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                 ;
++-------------------------------------------+--------------------------------------+
+; Name                                      ; Value                                ;
++-------------------------------------------+--------------------------------------+
+; Number of entity instances                ; 3                                    ;
+; Entity Instance                           ; banco_regs:br|altsyncram:x_rtl_0     ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                            ;
+;     -- WIDTH_A                            ; 32                                   ;
+;     -- NUMWORDS_A                         ; 31                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                         ;
+;     -- WIDTH_B                            ; 32                                   ;
+;     -- NUMWORDS_B                         ; 31                                   ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                            ;
+; Entity Instance                           ; banco_regs:br|altsyncram:x_rtl_1     ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                            ;
+;     -- WIDTH_A                            ; 32                                   ;
+;     -- NUMWORDS_A                         ; 31                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                         ;
+;     -- WIDTH_B                            ; 32                                   ;
+;     -- NUMWORDS_B                         ; 31                                   ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                            ;
+; Entity Instance                           ; data_mem_ram:md|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                          ;
+;     -- WIDTH_A                            ; 32                                   ;
+;     -- NUMWORDS_A                         ; 64                                   ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                         ;
+;     -- WIDTH_B                            ; 1                                    ;
+;     -- NUMWORDS_B                         ; 1                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                            ;
++-------------------------------------------+--------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "data_mem_ram:md"                                                                                                                                                                     ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; end_lei ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; end_esc ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "gera_imediato:gi"                                                                                                                                                                        ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                            ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; entr_parte2 ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_gimm:mgi"                                                                                                                                                               ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                                 ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; parte2im ; Output ; Warning  ; Output or bidir port (5 bits) is smaller than the port expression (32 bits) it drives.  The 27 most-significant bit(s) in the port expression will be connected to GND. ;
++----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 416                         ;
+; cycloneiii_ff         ; 127                         ;
+;     plain             ; 127                         ;
+; cycloneiii_lcell_comb ; 347                         ;
+;     arith             ; 94                          ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 62                          ;
+;     normal            ; 253                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 141                         ;
+;         4 data inputs ; 98                          ;
+; cycloneiii_ram_block  ; 96                          ;
+;                       ;                             ;
+; Max LUT depth         ; 11.50                       ;
+; Average LUT depth     ; 7.25                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Fri Nov 27 07:28:14 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RVSP -c RVSP
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file visualiza.bdf
+    Info (12023): Found entity 1: visualiza
+Info (12021): Found 1 design units, including 1 entities, in source file banco_regs.v
+    Info (12023): Found entity 1: banco_regs File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/banco_regs.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unid_controle.v
+    Info (12023): Found entity 1: unid_controle File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ULA.v
+    Info (12023): Found entity 1: ULA File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/ULA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testa_unid_controle.v
+    Info (12023): Found entity 1: testa_unid_controle File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testa_integr.v
+    Info (12023): Found entity 1: testa_integr File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_integr.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file splitbits.v
+    Info (12023): Found entity 1: splitbits File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/splitbits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file PC3_Final.v
+    Info (12023): Found entity 1: PC3_Final File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/PC3_Final.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_ula.v
+    Info (12023): Found entity 1: mux_ula File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_ula.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_memreg.v
+    Info (12023): Found entity 1: mux_memreg File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_memreg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_gimm.v
+    Info (12023): Found entity 1: mux_gimm File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_gimm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_breg_slt.v
+    Info (12023): Found entity 1: mux_breg_slt File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_breg_slt.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_branch_adder.v
+    Info (12023): Found entity 1: mux_branch_adder File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mux_branch_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mem_inst.v
+    Info (12023): Found entity 1: mem_inst File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file gerencia_PC.v
+    Info (12023): Found entity 1: gerencia_PC File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/gerencia_PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file gera_imediato.v
+    Info (12023): Found entity 1: gera_imediato File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/gera_imediato.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file DECODIFICADOR_BCD.v
+    Info (12023): Found entity 1: DECODIFICADOR_BCD File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/DECODIFICADOR_BCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file data_mem_ram.v
+    Info (12023): Found entity 1: data_mem_ram File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/data_mem_ram.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file contr_ula.v
+    Info (12023): Found entity 1: contr_ula File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/contr_ula.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at testa_unid_controle.v(24): instance has no name File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at testa_unid_controle.v(31): instance has no name File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at testa_integr.v(37): instance has no name File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_integr.v Line: 37
+Critical Warning (10846): Verilog HDL Instantiation warning at PC3_Final.v(26): instance has no name File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/PC3_Final.v Line: 26
+Critical Warning (10846): Verilog HDL Instantiation warning at PC3_Final.v(33): instance has no name File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/PC3_Final.v Line: 33
+Info (12127): Elaborating entity "testa_unid_controle" for the top level hierarchy
+Info (12128): Elaborating entity "gerencia_PC" for hierarchy "gerencia_PC:gpc" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 21
+Info (12128): Elaborating entity "mem_inst" for hierarchy "mem_inst:mi" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 22
+Warning (10850): Verilog HDL warning at mem_inst.v(19): number of words (10) in memory file does not match the number of elements in the address range [0:63] File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 19
+Warning (10030): Net "rom.data_a" at mem_inst.v(14) has no driver or initial value, using a default initial value '0' File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 14
+Warning (10030): Net "rom.waddr_a" at mem_inst.v(14) has no driver or initial value, using a default initial value '0' File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 14
+Warning (10030): Net "rom.we_a" at mem_inst.v(14) has no driver or initial value, using a default initial value '0' File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 14
+Info (12128): Elaborating entity "unid_controle" for hierarchy "unid_controle:uc" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 23
+Warning (10270): Verilog HDL Case Statement warning at unid_controle.v(110): incomplete case statement has no default case item File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 110
+Warning (10270): Verilog HDL Case Statement warning at unid_controle.v(151): incomplete case statement has no default case item File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 151
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "regWrite", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "ALUSrc", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "SeltipoSouB", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "MemToReg", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "MemWrite", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "PCSrc", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10240): Verilog HDL Always Construct warning at unid_controle.v(10): inferring latch(es) for variable "ALUOp", which holds its previous value in one or more paths through the always construct File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (10230): Verilog HDL assignment warning at unid_controle.v(241): truncated value with size 32 to match size of target (3) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 241
+Warning (10230): Verilog HDL assignment warning at unid_controle.v(242): truncated value with size 32 to match size of target (1) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 242
+Info (10041): Inferred latch for "ALUOp[0]" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "ALUOp[1]" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "ALUOp[2]" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "ALUOp[3]" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "PCSrc" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "MemWrite" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "MemToReg" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "SeltipoSouB" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "ALUSrc" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (10041): Inferred latch for "regWrite" at unid_controle.v(10) File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Info (12128): Elaborating entity "mux_breg_slt" for hierarchy "mux_breg_slt:comb_18" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 24
+Info (12128): Elaborating entity "banco_regs" for hierarchy "banco_regs:br" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 25
+Info (12128): Elaborating entity "mux_gimm" for hierarchy "mux_gimm:mgi" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 27
+Info (12128): Elaborating entity "gera_imediato" for hierarchy "gera_imediato:gi" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 29
+Info (12128): Elaborating entity "mux_ula" for hierarchy "mux_ula:comb_19" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 31
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:unid_log_arit" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 33
+Info (12128): Elaborating entity "data_mem_ram" for hierarchy "data_mem_ram:md" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 35
+Info (12128): Elaborating entity "mux_memreg" for hierarchy "mux_memreg:mmr" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 37
+Info (12128): Elaborating entity "mux_branch_adder" for hierarchy "mux_branch_adder:mba" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 39
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "imed_p2muxed[31]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[30]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[29]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[28]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[27]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[26]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[25]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[24]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[23]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[22]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[21]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[20]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[19]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[18]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[17]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[16]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[15]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[14]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[13]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[12]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[11]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[10]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[9]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[8]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[7]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[6]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[5]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "imed_p2muxed[31]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[30]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[29]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[28]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[27]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[26]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[25]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[24]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[23]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[22]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[21]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[20]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[19]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[18]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[17]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[16]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[15]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[14]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[13]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[12]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[11]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[10]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[9]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[8]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[7]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[6]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[5]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "imed_p2muxed[31]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[30]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[29]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[28]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[27]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[26]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[25]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[24]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[23]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[22]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[21]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[20]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[19]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[18]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[17]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[16]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[15]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[14]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[13]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[12]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[11]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[10]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[9]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[8]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[7]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[6]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[5]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "imed_p2muxed[31]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[30]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[29]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[28]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[27]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[26]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[25]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[24]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[23]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[22]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[21]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[20]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[19]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[18]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[17]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[16]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[15]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[14]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[13]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[12]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[11]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[10]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[9]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[8]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[7]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[6]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[5]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "imed_p2muxed[31]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[30]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[29]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[28]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[27]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[26]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[25]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[24]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[23]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[22]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[21]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[20]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[19]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[18]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[17]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[16]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[15]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[14]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[13]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[12]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[11]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[10]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[9]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[8]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[7]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[6]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[5]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "imed_p2muxed[31]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[30]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[29]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[28]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[27]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[26]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[25]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[24]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[23]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[22]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[21]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[20]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[19]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[18]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[17]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[16]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[15]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[14]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[13]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[12]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[11]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[10]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[9]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[8]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[7]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[6]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (12110): Net "imed_p2muxed[5]" is missing source, defaulting to GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+Warning (276020): Inferred RAM node "banco_regs:br|x_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "banco_regs:br|x_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "mem_inst:mi|rom" is uninferred due to asynchronous read logic File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 14
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/fpelogia/Documentos/2020.2/LABES/RVSP/db/RVSP.ram0_mem_inst_5eb8bb2f.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "banco_regs:br|x_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 31
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 31
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "banco_regs:br|x_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 31
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 31
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_mem_ram:md|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 6
+        Info (286033): Parameter NUMWORDS_A set to 64
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/RVSP.ram0_data_mem_ram_f5304155.hdl.mif
+Info (12130): Elaborated megafunction instantiation "banco_regs:br|altsyncram:x_rtl_0"
+Info (12133): Instantiated megafunction "banco_regs:br|altsyncram:x_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "31"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "31"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kcc1.tdf
+    Info (12023): Found entity 1: altsyncram_kcc1 File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/db/altsyncram_kcc1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "banco_regs:br|altsyncram:x_rtl_1"
+Info (12133): Instantiated megafunction "banco_regs:br|altsyncram:x_rtl_1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "31"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "31"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12130): Elaborated megafunction instantiation "data_mem_ram:md|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "data_mem_ram:md|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "6"
+    Info (12134): Parameter "NUMWORDS_A" = "64"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/RVSP.ram0_data_mem_ram_f5304155.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eec1.tdf
+    Info (12023): Found entity 1: altsyncram_eec1 File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/db/altsyncram_eec1.tdf Line: 27
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "unid_controle:uc|PCSrc" merged with LATCH primitive "unid_controle:uc|SeltipoSouB" File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+Warning (13012): Latch unid_controle:uc|ALUOp[0] has unsafe behavior File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_inst:mi|saida[9] File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 22
+Warning (13012): Latch unid_controle:uc|ALUSrc has unsafe behavior File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_inst:mi|saida[9] File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 22
+Warning (13012): Latch unid_controle:uc|SeltipoSouB has unsafe behavior File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_inst:mi|saida[0] File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 22
+Warning (13012): Latch unid_controle:uc|MemToReg has unsafe behavior File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_inst:mi|saida[0] File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 22
+Warning (13012): Latch unid_controle:uc|regWrite has unsafe behavior File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal mem_inst:mi|saida[0] File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/mem_inst.v Line: 22
+Warning (14026): LATCH primitive "unid_controle:uc|ALUOp[0]" is permanently enabled File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 10
+Warning (14026): LATCH primitive "unid_controle:uc|ALUSrc" is permanently enabled File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+Warning (14026): LATCH primitive "unid_controle:uc|SeltipoSouB" is permanently enabled File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+Warning (14026): LATCH primitive "unid_controle:uc|MemToReg" is permanently enabled File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+Warning (14026): LATCH primitive "unid_controle:uc|regWrite" is permanently enabled File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/unid_controle.v Line: 4
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "ALUOp[1]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 13
+    Warning (13410): Pin "ALUOp[2]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 13
+    Warning (13410): Pin "ALUOp[3]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 13
+    Warning (13410): Pin "MemWrite" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 11
+    Warning (13410): Pin "Tipo_Branch[2]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 14
+    Warning (13410): Pin "rl1[4]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 15
+    Warning (13410): Pin "rl2[3]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 15
+    Warning (13410): Pin "rl2[4]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 15
+    Warning (13410): Pin "inst[2]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "inst[3]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "inst[13]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "inst[14]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "inst[19]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "inst[23]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "inst[24]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 9
+    Warning (13410): Pin "imed_p2muxed[5]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[6]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[7]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[8]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[9]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[10]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[11]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[12]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[13]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[14]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[15]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[16]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[17]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[18]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[19]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[20]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[21]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[22]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[23]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[24]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[25]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[26]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[27]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[28]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[29]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[30]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "imed_p2muxed[31]" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 10
+    Warning (13410): Pin "selSLT" is stuck at GND File: /home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_unid_controle.v Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 977 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 415 output pins
+    Info (21061): Implemented 465 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 252 warnings
+    Info: Peak virtual memory: 962 megabytes
+    Info: Processing ended: Fri Nov 27 07:28:29 2020
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
+
+

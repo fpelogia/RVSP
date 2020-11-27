@@ -1,0 +1,108 @@
+Restore Archived Project report for RVSP
+Fri Nov 27 07:27:21 2020
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Fri Nov 27 07:27:21 2020 ;
+; Revision Name                   ; RVSP                                  ;
+; Top-level Entity Name           ; testa_unid_controle                   ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '/home/fpelogia/Documentos/2020.2/LABES/RVSP.qar' into the '/home/fpelogia/Documentos/2020.2/LABES/RVSP/' directory
+Info: Generated report 'RVSP.restore.rpt'
+Info (23030): Evaluation of Tcl script /opt/intelFPGA_lite/17.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 1022 megabytes
+    Info: Processing ended: Fri Nov 27 07:27:21 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++----------------------------+
+; Files Restored             ;
++----------------------------+
+; File Name                  ;
++----------------------------+
+; qar_info.json              ;
+; DECODIFICADOR_BCD.v        ;
+; PC3_Final.v                ;
+; RVSP.qpf                   ;
+; RVSP.qsf                   ;
+; ULA.v                      ;
+; banco_regs.v               ;
+; contr_ula.v                ;
+; data_mem_ram.v             ;
+; gera_imediato.v            ;
+; gerencia_PC.v              ;
+; mem_inst.v                 ;
+; mem_inst_init.txt          ;
+; mux_branch_adder.v         ;
+; mux_breg_slt.v             ;
+; mux_gimm.v                 ;
+; mux_memreg.v               ;
+; mux_ula.v                  ;
+; splitbits.v                ;
+; testa_breg.vwf             ;
+; testa_datamem.vwf          ;
+; testa_gerenciaPC.vwf       ;
+; testa_gimm.vwf             ;
+; testa_integr.v             ;
+; testa_integracao.vwf       ;
+; testa_mux_branch_adder.vwf ;
+; testa_mux_gim.vwf          ;
+; testa_mux_mr.vwf           ;
+; testa_mux_ula.vwf          ;
+; testa_ula.vwf              ;
+; testa_ula_e_breg.vwf       ;
+; testa_unid_controle.v      ;
+; unid_controle.v            ;
+; visualiza.bdf              ;
+; assignment_defaults.qdf    ;
++----------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
