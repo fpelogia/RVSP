@@ -1,13 +1,13 @@
-TimeQuest Timing Analyzer report for RVSP
-Fri Nov 27 07:29:08 2020
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Timing Analyzer report for RVSP
+Mon Nov 30 19:42:06 2020
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. TimeQuest Timing Analyzer Summary
+  2. Timing Analyzer Summary
   3. Parallel Compilation
   4. Clocks
   5. Slow 1200mV 85C Model Fmax Summary
@@ -51,16 +51,16 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  43. Clock Status Summary
  44. Unconstrained Output Ports
  45. Unconstrained Output Ports
- 46. TimeQuest Timing Analyzer Messages
+ 46. Timing Analyzer Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -70,15 +70,16 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
 +-----------------------------------------------------------------------------+
-; TimeQuest Timing Analyzer Summary                                           ;
+; Timing Analyzer Summary                                                     ;
 +-----------------------+-----------------------------------------------------+
-; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Timing Analyzer       ; TimeQuest                                           ;
+; Quartus Prime Version ; Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
 ; Revision Name         ; RVSP                                                ;
 ; Device Family         ; Cyclone IV E                                        ;
 ; Device Name           ; EP4CE115F29C7                                       ;
@@ -96,12 +97,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.15        ;
+; Average used               ; 1.16        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  15.3%      ;
+;     Processor 2            ;  16.1%      ;
 +----------------------------+-------------+
 
 
@@ -3462,29 +3463,29 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-----------------+---------------------------------------------------------------------------------------+
 
 
-+------------------------------------+
-; TimeQuest Timing Analyzer Messages ;
-+------------------------------------+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime TimeQuest Timing Analyzer
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Nov 27 07:29:05 2020
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Nov 30 19:42:03 2020
 Info: Command: quartus_sta RVSP -c RVSP
-Info: qsta_default_script.tcl version: #3
+Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'RVSP.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RVSP.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
 Info (332146): Worst-case setup slack is -10.231
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -3502,9 +3503,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
 Info (332146): Worst-case setup slack is -9.174
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -3520,9 +3521,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000            -197.983 clk 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
 Info (332146): Worst-case setup slack is -4.261
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -3539,9 +3540,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000            -153.277 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 876 megabytes
-    Info: Processing ended: Fri Nov 27 07:29:08 2020
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 514 megabytes
+    Info: Processing ended: Mon Nov 30 19:42:06 2020
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
