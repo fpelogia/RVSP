@@ -9,10 +9,10 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="/home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_integracao.vwf" --testbench_file="/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/testa_integracao.vwf.vt"
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Mon Nov 30 19:43:27 2020Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source=/home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_integracao.vwf --testbench_file=/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/testa_integracao.vwf.vtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-" in vector source file when writing test bench files
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sun Dec 13 15:35:40 2020Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source=/home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_integracao.vwf --testbench_file=/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/testa_integracao.vwf.vtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 iting test bench files
-" in vector source file when writing test bench files
+files
+05): Ignoring output pin "ALUOp[1]" in vector source file when writing test bench files
 Completed successfully. 
 
 Completed successfully. 
@@ -21,7 +21,7 @@ Completed successfully.
 
 quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/" RVSP -c RVSP
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Mon Nov 30 19:43:28 2020Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/ RVSP -c RVSPWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file RVSP.vo in folder "/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 608 megabytes    Info: Processing ended: Mon Nov 30 19:43:29 2020    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sun Dec 13 15:35:41 2020Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/ RVSP -c RVSPWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file RVSP.vo in folder "/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 617 megabytes    Info: Processing ended: Sun Dec 13 15:35:42 2020    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
@@ -39,23 +39,22 @@ Reading pref.tcl
 # do RVSP.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:43:30 on Nov 30,2020
-# vlog -work work RVSP.vo 
+# Start time: 15:35:43 on Dec 13,2020# vlog -work work RVSP.vo 
 # -- Compiling module testa_unid_controle
 # -- Compiling module hard_block
 # 
-# Top level modules:# 	testa_unid_controle
-# End time: 19:43:30 on Nov 30,2020, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# Top level modules:# 	testa_unid_controle# End time: 15:35:43 on Dec 13,2020, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:43:30 on Nov 30,2020# vlog -work work testa_integracao.vwf.vt 
+# Start time: 15:35:43 on Dec 13,2020# vlog -work work testa_integracao.vwf.vt 
 # -- Compiling module testa_unid_controle_vlg_vec_tst
 # 
 # Top level modules:# 	testa_unid_controle_vlg_vec_tst
-# End time: 19:43:30 on Nov 30,2020, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
-# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.testa_unid_controle_vlg_vec_tst # Start time: 19:43:30 on Nov 30,2020# Loading work.testa_unid_controle_vlg_vec_tst# Loading work.testa_unid_controle# Loading work.hard_block# Loading cycloneive_ver.cycloneive_io_obuf# Loading cycloneive_ver.cycloneive_io_ibuf# Loading cycloneive_ver.cycloneive_clkctrl# Loading cycloneive_ver.cycloneive_mux41# Loading cycloneive_ver.cycloneive_ena_reg# Loading cycloneive_ver.cycloneive_lcell_comb# Loading altera_ver.dffeas# Loading cycloneive_ver.cycloneive_ram_block# Loading cycloneive_ver.cycloneive_ram_register# Loading cycloneive_ver.cycloneive_ram_pulse_generator# Loading altera_ver.PRIM_GDFF_LOW
+# End time: 15:35:44 on Dec 13,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.testa_unid_controle_vlg_vec_tst # Start time: 15:35:44 on Dec 13,2020# Loading work.testa_unid_controle_vlg_vec_tst# Loading work.testa_unid_controle# Loading work.hard_block# Loading cycloneive_ver.cycloneive_io_obuf# Loading cycloneive_ver.cycloneive_io_ibuf# Loading cycloneive_ver.cycloneive_clkctrl# Loading cycloneive_ver.cycloneive_mux41# Loading cycloneive_ver.cycloneive_ena_reg# Loading cycloneive_ver.cycloneive_lcell_comb# Loading altera_ver.dffeas# Loading cycloneive_ver.cycloneive_ram_block# Loading cycloneive_ver.cycloneive_ram_register# Loading cycloneive_ver.cycloneive_ram_pulse_generator# Loading altera_ver.PRIM_GDFF_LOW# ** Warning: Design size of 13625 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.# Expect performance to be adversely affected.
 # after#26
 # ** Note: $finish    : testa_integracao.vwf.vt(95)#    Time: 3 us  Iteration: 0  Instance: /testa_unid_controle_vlg_vec_tst
-# End time: 19:43:31 on Nov 30,2020, Elapsed time: 0:00:01# Errors: 0, Warnings: 0
+# End time: 15:35:45 on Dec 13,2020, Elapsed time: 0:00:01# Errors: 0, Warnings: 1
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
@@ -66,9 +65,7 @@ Reading /home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/RVSP.msim.vc
 
 Processing channel transitions... 
 
-Warning: SeltipoS - signal not found in VCD.
-
-Writing the resulting VWF to /home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/RVSP_20201130194331.sim.vwf
+Writing the resulting VWF to /home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/RVSP_20201213153545.sim.vwf
 
 Finished VCD to VWF conversion.
 

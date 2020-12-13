@@ -9,7 +9,7 @@ module data_mem_ram
 	input [(DATA_WIDTH-1):0] entr,
 	input [(ADDR_WIDTH-1):0] end_lei, end_esc,
 	input h_esc, clk,
-	output reg [(DATA_WIDTH-1):0] saida
+	output [(DATA_WIDTH-1):0] saida
 );
 
 	// Declara a RAM de dados
@@ -26,8 +26,7 @@ module data_mem_ram
 		// escrita
 		if (h_esc)
 			ram[end_esc] <= entr;
-
-		saida <= ram[end_lei];
 	end
+	assign saida = ram[end_lei];
 
 endmodule

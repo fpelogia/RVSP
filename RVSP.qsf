@@ -62,6 +62,8 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_breg_slt_jal.vwf
+set_global_assignment -name VERILOG_FILE mux_breg_slt_jal.v
 set_global_assignment -name BDF_FILE visualiza.bdf
 set_global_assignment -name VERILOG_FILE banco_regs.v
 set_global_assignment -name TEXT_FILE mem_inst_init.txt
@@ -85,7 +87,6 @@ set_global_assignment -name VERILOG_FILE PC3_Final.v
 set_global_assignment -name VERILOG_FILE mux_ula.v
 set_global_assignment -name VERILOG_FILE mux_memreg.v
 set_global_assignment -name VERILOG_FILE mux_gimm.v
-set_global_assignment -name VERILOG_FILE mux_breg_slt.v
 set_global_assignment -name VERILOG_FILE mux_branch_adder.v
 set_global_assignment -name VERILOG_FILE mem_inst.v
 set_global_assignment -name VERILOG_FILE gerencia_PC.v

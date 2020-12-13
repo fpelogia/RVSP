@@ -4,6 +4,9 @@ Este arquivo e uma copia do "testa_unid_controle.v",
 mas sem colocar os fios como saida
 
 A saida eh o dado que entra no banco de registradores
+
+ATUALIZAR !!!!!!!!!!!!!!!!
+
 */
 input clk;
 output [31:0] dado;
@@ -23,14 +26,14 @@ assign rd  = inst[11:7];
 gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC));
 mem_inst mi(.clk(clk), .ender(atualPC[5:0]), .saida(inst));
 unid_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT(selSLT));
-mux_breg_slt(.selSLT(selSLT), .dado(dado), .neg(n), .breg_in(breg_in));
+mux_breg_slt mbs(.selSLT(selSLT), .dado(dado), .neg(n), .breg_in(breg_in));
 banco_regs br(.clk(clk),.rl1(inst[19:15]), .rl2(inst[24:20]), .resc(inst[11:7]), .dado(breg_in), .h_esc(regWrite),.d1(rl1out), .d2(rl2out));
 
 mux_gimm mgi(.sel_tipo_s_ou_b(SeltipoSouB), .entr(inst[31:7]), .parte2im(imed_p2muxed));
 
 gera_imediato gi(.entr_parte1(inst[31:25]), .entr_parte2(imed_p2muxed), .saida(imed));
 
-mux_ula(.ALUSrc(ALUSrc), .dado2(rl2out), .imed(imed), .saida(ula_in2));
+mux_ula mxula(.ALUSrc(ALUSrc), .dado2(rl2out), .imed(imed), .saida(ula_in2));
 
 ULA unid_log_arit(.sel(ALUOp), .X(rl1out), .Y(ula_in2), .res(ulares), .neg(n), .zero(z));
 

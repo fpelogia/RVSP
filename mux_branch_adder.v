@@ -29,6 +29,9 @@ always @(*)begin
 					else	novoPC = atualPC + 1'd1;
 					// pensar em como tratar unsigned
 				end
+			6: begin //jal
+					novoPC = imed;
+				end
 			default: novoPC = atualPC + imed;
 		endcase
 	end

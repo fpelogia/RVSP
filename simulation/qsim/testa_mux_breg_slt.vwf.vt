@@ -1,0 +1,233 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "12/02/2020 11:28:29"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          mux_breg_slt
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module mux_breg_slt_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [31:0] dado;
+reg neg;
+reg selSLT;
+// wires                                               
+wire [31:0] breg_in;
+
+// assign statements (if any)                          
+mux_breg_slt i1 (
+// port map - connection between master ports and signals/registers   
+	.breg_in(breg_in),
+	.dado(dado),
+	.neg(neg),
+	.selSLT(selSLT)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+// dado[ 31 ]
+initial
+begin
+	dado[31] = 1'b0;
+end 
+// dado[ 30 ]
+initial
+begin
+	dado[30] = 1'b0;
+end 
+// dado[ 29 ]
+initial
+begin
+	dado[29] = 1'b0;
+end 
+// dado[ 28 ]
+initial
+begin
+	dado[28] = 1'b0;
+end 
+// dado[ 27 ]
+initial
+begin
+	dado[27] = 1'b0;
+end 
+// dado[ 26 ]
+initial
+begin
+	dado[26] = 1'b0;
+end 
+// dado[ 25 ]
+initial
+begin
+	dado[25] = 1'b0;
+end 
+// dado[ 24 ]
+initial
+begin
+	dado[24] = 1'b0;
+end 
+// dado[ 23 ]
+initial
+begin
+	dado[23] = 1'b0;
+end 
+// dado[ 22 ]
+initial
+begin
+	dado[22] = 1'b0;
+end 
+// dado[ 21 ]
+initial
+begin
+	dado[21] = 1'b0;
+end 
+// dado[ 20 ]
+initial
+begin
+	dado[20] = 1'b0;
+end 
+// dado[ 19 ]
+initial
+begin
+	dado[19] = 1'b0;
+end 
+// dado[ 18 ]
+initial
+begin
+	dado[18] = 1'b0;
+end 
+// dado[ 17 ]
+initial
+begin
+	dado[17] = 1'b0;
+end 
+// dado[ 16 ]
+initial
+begin
+	dado[16] = 1'b0;
+end 
+// dado[ 15 ]
+initial
+begin
+	dado[15] = 1'b0;
+end 
+// dado[ 14 ]
+initial
+begin
+	dado[14] = 1'b0;
+end 
+// dado[ 13 ]
+initial
+begin
+	dado[13] = 1'b0;
+end 
+// dado[ 12 ]
+initial
+begin
+	dado[12] = 1'b0;
+end 
+// dado[ 11 ]
+initial
+begin
+	dado[11] = 1'b0;
+end 
+// dado[ 10 ]
+initial
+begin
+	dado[10] = 1'b0;
+end 
+// dado[ 9 ]
+initial
+begin
+	dado[9] = 1'b0;
+end 
+// dado[ 8 ]
+initial
+begin
+	dado[8] = 1'b0;
+end 
+// dado[ 7 ]
+initial
+begin
+	dado[7] = 1'b0;
+end 
+// dado[ 6 ]
+initial
+begin
+	dado[6] = 1'b0;
+end 
+// dado[ 5 ]
+initial
+begin
+	dado[5] = 1'b0;
+end 
+// dado[ 4 ]
+initial
+begin
+	dado[4] = 1'b0;
+end 
+// dado[ 3 ]
+initial
+begin
+	dado[3] = 1'b1;
+end 
+// dado[ 2 ]
+initial
+begin
+	dado[2] = 1'b0;
+end 
+// dado[ 1 ]
+initial
+begin
+	dado[1] = 1'b1;
+end 
+// dado[ 0 ]
+initial
+begin
+	dado[0] = 1'b0;
+end 
+
+// neg
+initial
+begin
+	neg = 1'b1;
+	neg = #400000 1'b0;
+	neg = #400000 1'b1;
+end 
+
+// selSLT
+initial
+begin
+	selSLT = 1'b1;
+	# 200000;
+	repeat(2)
+	begin
+		selSLT = 1'b0;
+		selSLT = #200000 1'b1;
+		# 200000;
+	end
+end 
+endmodule
+

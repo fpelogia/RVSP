@@ -34,7 +34,7 @@ mux_gimm mgi(.sel_tipo_s_ou_b(SeltipoSouB), .entr(inst[31:7]), .parte2im(imed_p2
 
 gera_imediato gi(.entr_parte1(inst[31:25]), .entr_parte2(imed_p2muxed), .saida(imed));
 
-mux_ula(.ALUSrc(ALUSrc), .dado2(rl2out), .imed(imed), .saida(ula_in2));
+mux_ula mxula(.ALUSrc(ALUSrc), .dado2(rl2out), .imed(imed), .saida(ula_in2));
 
 ULA unid_log_arit(.sel(ALUOp), .X(rl1out), .Y(ula_in2), .res(ulares), .neg(n), .zero(z));
 
