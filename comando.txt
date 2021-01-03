@@ -1,0 +1,1 @@
+grep -A 64  #FIM programa.txt | sed -e 's/ //g' -e '1d'

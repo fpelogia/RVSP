@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY testa_unid_controle
+set_global_assignment -name TOP_LEVEL_ENTITY visualiza
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:15:21  NOVEMBER 22, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -59,39 +59,54 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_breg_slt_jal.vwf
-set_global_assignment -name VERILOG_FILE mux_breg_slt_jal.v
-set_global_assignment -name BDF_FILE visualiza.bdf
-set_global_assignment -name VERILOG_FILE banco_regs.v
-set_global_assignment -name TEXT_FILE mem_inst_init.txt
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_ula_e_breg.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_soma_desvio.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_gim.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_ula.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_ula.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_mr.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_gim.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_branch_adder.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_integracao.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_breg_slt_jal.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_memoria_de_dados.vwf
+set_global_assignment -name TEXT_FILE inicializa_mem_inst.txt
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_memoria_de_instrucoes.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gimm.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gerenciaPC.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_datamem.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_breg.vwf
-set_global_assignment -name VERILOG_FILE unid_controle.v
-set_global_assignment -name VERILOG_FILE ULA.v
-set_global_assignment -name VERILOG_FILE testa_unid_controle.v
-set_global_assignment -name VERILOG_FILE testa_integr.v
-set_global_assignment -name VERILOG_FILE splitbits.v
-set_global_assignment -name VERILOG_FILE PC3_Final.v
-set_global_assignment -name VERILOG_FILE mux_ula.v
-set_global_assignment -name VERILOG_FILE mux_memreg.v
-set_global_assignment -name VERILOG_FILE mux_gimm.v
-set_global_assignment -name VERILOG_FILE mux_branch_adder.v
-set_global_assignment -name VERILOG_FILE mem_inst.v
-set_global_assignment -name VERILOG_FILE gerencia_PC.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_processador_debug.vwf
+set_global_assignment -name BDF_FILE visualiza.bdf
+set_global_assignment -name VERILOG_FILE memoria_de_instrucoes.v
 set_global_assignment -name VERILOG_FILE gera_imediato.v
+set_global_assignment -name VERILOG_FILE mux_gimm.v
+set_global_assignment -name VERILOG_FILE banco_de_registradores.v
+set_global_assignment -name VERILOG_FILE mux_memreg.v
+set_global_assignment -name VERILOG_FILE unidade_de_controle.v
+set_global_assignment -name VERILOG_FILE splitbits.v
 set_global_assignment -name VERILOG_FILE DECODIFICADOR_BCD.v
-set_global_assignment -name VERILOG_FILE data_mem_ram.v
 set_global_assignment -name VERILOG_FILE contr_ula.v
+set_global_assignment -name VERILOG_FILE gerencia_PC.v
+set_global_assignment -name VERILOG_FILE mux_breg_slt_jal.v
+set_global_assignment -name VERILOG_FILE memoria_de_dados.v
+set_global_assignment -name VERILOG_FILE mux_ula.v
+set_global_assignment -name VERILOG_FILE mux_soma_desvio.v
+set_global_assignment -name VERILOG_FILE ULA.v
+set_global_assignment -name VERILOG_FILE processador_debug.v
+set_global_assignment -name VERILOG_FILE processador.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_banco_de_registradores.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE processador.vwf
+set_location_assignment PIN_Y16 -to pin_name1
+set_location_assignment PIN_G18 -to 1a
+set_location_assignment PIN_F22 -to 1b
+set_location_assignment PIN_E17 -to 1c
+set_location_assignment PIN_L26 -to 1d
+set_location_assignment PIN_L25 -to 1e
+set_location_assignment PIN_J22 -to 1f
+set_location_assignment PIN_H22 -to 1g
+set_location_assignment PIN_M24 -to 2a
+set_location_assignment PIN_Y22 -to 2b
+set_location_assignment PIN_W21 -to 2c
+set_location_assignment PIN_W22 -to 2d
+set_location_assignment PIN_W25 -to 2e
+set_location_assignment PIN_U23 -to 2f
+set_location_assignment PIN_U24 -to 2g
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

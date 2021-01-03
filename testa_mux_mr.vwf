@@ -1,14 +1,14 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off PC3 -c PC3 --vector_source="/home/fpelogia/Documentos/2020 UNIFESP EAD/LABAOC/PC3/testa_mux_mr.vwf" --testbench_file="/home/fpelogia/Documentos/2020 UNIFESP EAD/LABAOC/PC3/simulation/qsim/testa_mux_mr.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off PC3 -c PC3 --vector_source="/home/fpelogia/Documentos/2020 UNIFESP EAD/LABAOC/PC3/testa_mux_mr.vwf" --testbench_file="/home/fpelogia/Documentos/2020 UNIFESP EAD/LABAOC/PC3/simulation/qsim/testa_mux_mr.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/fpelogia/Documentos/2020 UNIFESP EAD/LABAOC/PC3/simulation/qsim/" PC3 -c PC3</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/fpelogia/Documentos/2020 UNIFESP EAD/LABAOC/PC3/simulation/qsim/" PC3 -c PC3</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="/home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_mux_mr.vwf" --testbench_file="/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/testa_mux_mr.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="/home/fpelogia/Documentos/2020.2/LABES/RVSP/testa_mux_mr.vwf" --testbench_file="/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/testa_mux_mr.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/" RVSP -c RVSP</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/fpelogia/Documentos/2020.2/LABES/RVSP/simulation/qsim/" RVSP -c RVSP</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
-vlog -work work PC3.vo
+vlog -work work RVSP.vo
 vlog -work work testa_mux_mr.vwf.vt
-vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.mux_memreg_vlg_vec_tst
-vcd file -direction PC3.msim.vcd
+vsim  -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.mux_memreg_vlg_vec_tst
+vcd file -direction RVSP.msim.vcd
 vcd add -internal mux_memreg_vlg_vec_tst/*
 vcd add -internal mux_memreg_vlg_vec_tst/i1/*
 proc simTimestamp {} {
@@ -23,10 +23,10 @@ quit -f
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
-vlog -work work PC3.vo
+vlog -work work RVSP.vo
 vlog -work work testa_mux_mr.vwf.vt
 vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.mux_memreg_vlg_vec_tst
-vcd file -direction PC3.msim.vcd
+vcd file -direction RVSP.msim.vcd
 vcd add -internal mux_memreg_vlg_vec_tst/*
 vcd add -internal mux_memreg_vlg_vec_tst/i1/*
 proc simTimestamp {} {
@@ -48,9 +48,9 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 2017  Intel Corporation. All rights reserved.
+Copyright (C) 2020  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -60,7 +60,8 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 */
 
 HEADER
