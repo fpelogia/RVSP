@@ -23,6 +23,8 @@ quit -f
 
 
 
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -41,6 +43,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
 
 
 
@@ -75,7 +79,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 100000.0;
+	DATA_DURATION = 2000.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -429,9 +433,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 20;
-			LEVEL 0 FOR 2500.0;
-			LEVEL 1 FOR 2500.0;
+			REPEAT = 80;
+			LEVEL 0 FOR 12.5;
+			LEVEL 1 FOR 12.5;
 		}
 	}
 }
@@ -442,7 +446,7 @@ TRANSITION_LIST("stdout[31]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -452,7 +456,7 @@ TRANSITION_LIST("stdout[30]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -462,7 +466,7 @@ TRANSITION_LIST("stdout[29]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -472,7 +476,7 @@ TRANSITION_LIST("stdout[28]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -482,7 +486,7 @@ TRANSITION_LIST("stdout[27]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -492,7 +496,7 @@ TRANSITION_LIST("stdout[26]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -502,7 +506,7 @@ TRANSITION_LIST("stdout[25]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -512,7 +516,7 @@ TRANSITION_LIST("stdout[24]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -522,7 +526,7 @@ TRANSITION_LIST("stdout[23]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -532,7 +536,7 @@ TRANSITION_LIST("stdout[22]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -542,7 +546,7 @@ TRANSITION_LIST("stdout[21]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -552,7 +556,7 @@ TRANSITION_LIST("stdout[20]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -562,7 +566,7 @@ TRANSITION_LIST("stdout[19]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -572,7 +576,7 @@ TRANSITION_LIST("stdout[18]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -582,7 +586,7 @@ TRANSITION_LIST("stdout[17]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -592,7 +596,7 @@ TRANSITION_LIST("stdout[16]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -602,7 +606,7 @@ TRANSITION_LIST("stdout[15]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -612,7 +616,7 @@ TRANSITION_LIST("stdout[14]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -622,7 +626,7 @@ TRANSITION_LIST("stdout[13]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -632,7 +636,7 @@ TRANSITION_LIST("stdout[12]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -642,7 +646,7 @@ TRANSITION_LIST("stdout[11]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -652,7 +656,7 @@ TRANSITION_LIST("stdout[10]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -662,7 +666,7 @@ TRANSITION_LIST("stdout[9]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -672,7 +676,7 @@ TRANSITION_LIST("stdout[8]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -682,7 +686,7 @@ TRANSITION_LIST("stdout[7]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -692,7 +696,7 @@ TRANSITION_LIST("stdout[6]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -702,7 +706,7 @@ TRANSITION_LIST("stdout[5]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -712,7 +716,7 @@ TRANSITION_LIST("stdout[4]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -722,7 +726,7 @@ TRANSITION_LIST("stdout[3]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -732,7 +736,7 @@ TRANSITION_LIST("stdout[2]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -742,7 +746,7 @@ TRANSITION_LIST("stdout[1]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
@@ -752,7 +756,7 @@ TRANSITION_LIST("stdout[0]")
 	{
 		REPEAT = 1;
 		LEVEL X FOR 999.0;
-		LEVEL 0 FOR 99001.0;
+		LEVEL 0 FOR 1001.0;
 	}
 }
 
