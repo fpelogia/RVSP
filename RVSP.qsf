@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY visualiza
+set_global_assignment -name TOP_LEVEL_ENTITY processador_debug
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:15:21  NOVEMBER 22, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -80,7 +80,6 @@ set_global_assignment -name VERILOG_FILE mux_memreg.v
 set_global_assignment -name VERILOG_FILE unidade_de_controle.v
 set_global_assignment -name VERILOG_FILE splitbits.v
 set_global_assignment -name VERILOG_FILE DECODIFICADOR_BCD.v
-set_global_assignment -name VERILOG_FILE contr_ula.v
 set_global_assignment -name VERILOG_FILE gerencia_PC.v
 set_global_assignment -name VERILOG_FILE mux_breg_slt_jal.v
 set_global_assignment -name VERILOG_FILE memoria_de_dados.v
