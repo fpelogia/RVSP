@@ -15,7 +15,6 @@ module ULA(sel, X, Y, res, neg, zero);
 			4'b0101: res = X >> Y;// desl. dir
 			4'b0110: res = X ^ Y;// XOR
 			4'b0111: res = ~X;// NOT (x)
-			4'b1000: res = X ~^ Y;// XNOR
 			default: res = 0;
 		endcase
 	end

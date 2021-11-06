@@ -41,7 +41,7 @@ set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY processador_debug
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:15:21  NOVEMBER 22, 2020"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -105,7 +105,16 @@ set_location_assignment PIN_W22 -to 2d
 set_location_assignment PIN_W25 -to 2e
 set_location_assignment PIN_U23 -to 2f
 set_location_assignment PIN_U24 -to 2g
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_visualiza.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE AREA"
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
+set_global_assignment -name OPTIMIZE_TIMING OFF
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name VERILOG_FILE mem_dados_dual.v
+set_global_assignment -name VERILOG_FILE divisor_freq.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

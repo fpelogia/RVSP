@@ -41,47 +41,27 @@ always @(*) begin
 						end
 					endcase
 				1: begin // sll rd,rs1,rs2
-					regWrite = 1;
-					ALUSrc = 0;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0100;
-					end
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0100;
+				end
 				2: begin // slt rd,rs1,rs2
-					regWrite = 1;
-					ALUSrc = 0;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0001;
-					// para essa instrucao
-					// o registrador deve 
-					// receber neg
-					end
-				4: case (f7)
-						0: begin // xor rd,rs1,rs2
 							regWrite = 1;
 							ALUSrc = 0;
 							SeltipoSouB = 0;
 							MemToReg = 0;
 							MemWrite = 0;
 							PCSrc = 0;
-							ALUOp = 4'b0110;//xor
-							end
-						32:begin // xnor rd,rs1,rs2
-							regWrite = 1;
-							ALUSrc = 0;
-							SeltipoSouB = 0;
-							MemToReg = 0;
-							MemWrite = 0;
-							PCSrc = 0;
-							ALUOp = 4'b1000;//xnor
-							end
-						default:
-							begin // (não deve chegar aqui) xor rd,rs1,rs2
+							ALUOp = 4'b0001;
+							// para essa instrucao
+							// o registrador deve 
+							// receber neg
+				end
+				4: begin // xor rd,rs1,rs2
 							regWrite = 1;
 							ALUSrc = 0;
 							SeltipoSouB = 0;
@@ -89,45 +69,43 @@ always @(*) begin
 							MemWrite = 0;
 							PCSrc = 0;
 							ALUOp = 4'b0110;
-							end	
-					endcase
+				end
 				5: begin // sll rd,rs1,rs2
-					regWrite = 1;
-					ALUSrc = 0;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0101;
-					end
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0101;
+				end
 				6: begin // or rd,rs1,rs2
-					regWrite = 1;
-					ALUSrc = 0;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0011;
-					end
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0011;
+				end
 				7: begin // and rd,rs1,rs2
-					regWrite = 1;
-					ALUSrc = 0;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0010;
-					end	
-				default: 
-					begin 
-					regWrite = 1;
-					ALUSrc = 1;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0000;
-					end
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0010;
+				end	
+				default: begin 
+							regWrite = 1;
+							ALUSrc = 1;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0000;
+				end
 			endcase
 		3:case(f3)
 				2:begin //lw rd, rs1, imm
@@ -249,6 +227,6 @@ always @(*) begin
 	endcase
 end
 assign Tipo_Branch = (opcode == 7'b1101111)? 6: ((f3 == 0)? 1: ((f3 == 1)?	2: ((f3 == 4)? 3 : ((f3 == 5)? 4: ((f3 == 6)? 5 : 0)))));
-assign selSLT_JAL = (opcode == 51 && f3 == 2)?((f7 == 32)?3:1):((opcode == 7'b1101111)? 2 : 0);
+assign selSLT_JAL = (opcode == 51 && f3 == 2)? 1:((opcode == 7'b1101111)? 2 : 0);
 
 endmodule

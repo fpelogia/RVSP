@@ -1,9 +1,9 @@
 module processador(clk,stdout);
 
 input clk;
-output[31:0] stdout;
-wire[31:0] dado;
-wire[31:0] rl1out,ula_in2;
+output [31:0] stdout;
+wire [31:0] dado;
+wire [31:0] rl1out,ula_in2;
 wire [31:0] inst; // carrega a instrucao completa
 wire [31:0] imed, rl2out,imed_p2muxed, ulares, memout, atualPC,novoPC,breg_in; 
 wire ALUSrc, n, z, SeltipoSouB, MemToReg, MemWrite, PCSrc;
@@ -23,7 +23,7 @@ memoria_de_instrucoes mi(.clk(clk), .ender(atualPC[5:0]), .saida(inst));
 
 unidade_de_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT_JAL(selSLT_JAL));
 
-mux_breg_slt_jal mbsj(.selSLT_JAL(selSLT_JAL), .dado(dado), .neg(n), .atualPC(atualPC), .breg_in(breg_in));
+mux_breg_slt_jal mbsj(.selSLT_JAL(selSLT_JAL), .dado(dado), .neg(n), .zero(z), .atualPC(atualPC), .breg_in(breg_in));
 
 banco_de_registradores br(.clk(clk),.rl1(inst[19:15]), .rl2(inst[24:20]), .resc(inst[11:7]), .dado(breg_in), .h_esc(regWrite),.d1(rl1out), .d2(rl2out));
 
