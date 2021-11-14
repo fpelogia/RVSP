@@ -16,6 +16,8 @@ module ULA(sel, X, Y, res, neg, zero);
 			4'b0110: res = X ^ Y;// XOR
 			4'b0111: res = ~X;// NOT (x)
 			4'b1000: res = X ~^ Y;// XNOR
+			4'b1001: res = X * Y;// multiplicação
+			4'b1010: res = X / Y;// divisão
 			default: res = 0;
 		endcase
 	end

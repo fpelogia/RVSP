@@ -61,6 +61,35 @@ always @(*) begin
 					// o registrador deve 
 					// receber neg
 					end
+				3: case (f7)						
+						0: begin // mul rd,rs1,rs2
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b1001;
+							end
+						32: begin // div rd,rs1,rs2
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b1010;
+							end
+						default: begin // add rd,rs1,rs2
+						regWrite = 1;
+						ALUSrc = 0;
+						SeltipoSouB = 0;
+						MemToReg = 0;
+						MemWrite = 0;
+						PCSrc = 0;
+						ALUOp = 4'b0000;
+						end
+					endcase
 				4: case (f7)
 						0: begin // xor rd,rs1,rs2
 							regWrite = 1;
