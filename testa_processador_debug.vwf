@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/RVSP/testa_processador_debug.vwf" --testbench_file="C:/Users/fredp/Documents/RVSP/simulation/qsim/testa_processador_debug.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/RVSP/testa_processador_debug.vwf" --testbench_file="C:/Users/fredp/Documents/RVSP/simulation/qsim/testa_processador_debug.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/RVSP/simulation/qsim/" RVSP -c RVSP</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/RVSP/simulation/qsim/" RVSP -c RVSP</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/GitHub/RVSP/testa_processador_debug.vwf" --testbench_file="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/testa_processador_debug.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/GitHub/RVSP/testa_processador_debug.vwf" --testbench_file="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/testa_processador_debug.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/" RVSP -c RVSP</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/" RVSP -c RVSP</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work RVSP.vo
@@ -20,9 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -41,9 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
-
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/

@@ -1,5 +1,7 @@
 module DECODIFICADOR_BCD(d4, a, b, c, d, e, f, g);
-
+/*
+Para ser utilizado nos testes com o kit FPGA
+*/
 	input [3:0] d4;
 	output a,b,c,d,e,f,g;
 	reg [6 : 0] d7s;

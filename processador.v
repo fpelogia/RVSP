@@ -1,7 +1,10 @@
-module processador(clk,stdout);
+module processador(clk_rapido, clk, dez, uni, stdout);
 
-input clk;
+input clk_rapido;
+output clk;
 output [31:0] stdout;
+output [3:0] dez;
+output [3:0] uni;
 wire [31:0] dado;
 wire [31:0] rl1out,ula_in2;
 wire [31:0] inst; // carrega a instrucao completa
@@ -16,6 +19,9 @@ wire [4:0] rl1, rl2, rd;
 assign rl1  = inst[19:15];
 assign rl2  = inst[24:20];
 assign rd  = inst[11:7];
+
+
+divisor_freq dfreq(.CLK_50(clk_rapido), .CLK_1(clk));
 
 gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC));
 
@@ -35,11 +41,16 @@ mux_ula mxula(.ALUSrc(ALUSrc), .dado2(rl2out), .imed(imed), .saida(ula_in2));
 
 ULA unid_log_arit(.sel(ALUOp), .X(rl1out), .Y(ula_in2), .res(ulares), .neg(n), .zero(z));
 
-memoria_de_dados md(.clk(clk),.entr(rl2out),.end_lei(ulares),.end_esc(ulares),.h_esc(MemWrite),.saida(memout), .stdout(stdout));
+//memoria_de_dados md(.clk(clk),.entr(rl2out),.end_lei(ulares),.end_esc(ulares),.h_esc(MemWrite),.saida(memout), .stdout(stdout));
+mem_dados_dual md(.write_clock(clk), .read_clock(clk_rapido), .dado_entr(rl2out),.end_lei(ulares),.end_esc(ulares),.hab_esc(MemWrite),.saida(memout), .stdout(stdout));
 
 mux_memreg mmr(.MemToReg(MemToReg),.ULAres(ulares), .memout(memout), .saida(dado));
 
 mux_soma_desvio msd(.PCSrc(PCSrc), .Tipo_Branch(Tipo_Branch) , .imed(imed), .ULA_res(ulares), .neg(n), .zero(z), .atualPC(atualPC), .novoPC(novoPC));
 
+buffer_saida_disp bsd(.dado(stdout[6:0]), .end_lei(0), .end_esc(0), .hab_esc(1), .read_clock(clk_rapido), .write_clock(clk), .disp_dezena(dez), .disp_unidade(uni));
+	
+	
+	
 
 endmodule
