@@ -1,10 +1,14 @@
-module processador(clk_rapido, clk, dez, uni, stdout);
+module processador(clk_rapido, clk, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g);
 
 input clk_rapido;
 output clk;
-output [31:0] stdout;
-output [3:0] dez;
-output [3:0] uni;
+wire [31:0] stdout;
+output [6:0] stdout_7b;
+wire [3:0] dezena;
+wire [3:0] unidade;
+output dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g;
+output unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g;
+
 wire [31:0] dado;
 wire [31:0] rl1out,ula_in2;
 wire [31:0] inst; // carrega a instrucao completa
@@ -48,9 +52,12 @@ mux_memreg mmr(.MemToReg(MemToReg),.ULAres(ulares), .memout(memout), .saida(dado
 
 mux_soma_desvio msd(.PCSrc(PCSrc), .Tipo_Branch(Tipo_Branch) , .imed(imed), .ULA_res(ulares), .neg(n), .zero(z), .atualPC(atualPC), .novoPC(novoPC));
 
-buffer_saida_disp bsd(.dado(stdout[6:0]), .end_lei(0), .end_esc(0), .hab_esc(1), .read_clock(clk_rapido), .write_clock(clk), .disp_dezena(dez), .disp_unidade(uni));
+limita_saida_7b ls7b(.dado(stdout), .d7b(stdout_7b));
+
+buffer_saida_disp bsd(.dado(stdout_7b), .end_lei(0), .end_esc(0), .hab_esc(1), .read_clock(clk_rapido), .write_clock(clk), .disp_dezena(dezena), .disp_unidade(unidade));
 	
-	
+DECODIFICADOR_BCD dbcd_d(.d4(dezena), .a(dez_a), .c(dez_c), .d(dez_d), .e(dez_e), .f(dez_f), .g(dez_g));	
+DECODIFICADOR_BCD dbcd_u(.d4(unidade), .a(unid_a), .c(unid_c), .d(unid_d), .e(unid_e), .f(unid_f), .g(unid_g));	
 	
 
 endmodule

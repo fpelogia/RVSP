@@ -90,21 +90,6 @@ set_global_assignment -name VERILOG_FILE processador_debug.v
 set_global_assignment -name VERILOG_FILE processador.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_banco_de_registradores.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE processador.vwf
-set_location_assignment PIN_Y16 -to pin_name1
-set_location_assignment PIN_G18 -to 1a
-set_location_assignment PIN_F22 -to 1b
-set_location_assignment PIN_E17 -to 1c
-set_location_assignment PIN_L26 -to 1d
-set_location_assignment PIN_L25 -to 1e
-set_location_assignment PIN_J22 -to 1f
-set_location_assignment PIN_H22 -to 1g
-set_location_assignment PIN_M24 -to 2a
-set_location_assignment PIN_Y22 -to 2b
-set_location_assignment PIN_W21 -to 2c
-set_location_assignment PIN_W22 -to 2d
-set_location_assignment PIN_W25 -to 2e
-set_location_assignment PIN_U23 -to 2f
-set_location_assignment PIN_U24 -to 2g
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_visualiza.vwf
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
 set_global_assignment -name SMART_RECOMPILE ON
@@ -116,7 +101,24 @@ set_global_assignment -name VERILOG_FILE mem_dados_dual.v
 set_global_assignment -name VERILOG_FILE divisor_freq.v
 set_global_assignment -name VERILOG_FILE buffer_saida_disp.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_buffer_saida_disp.vwf
+set_global_assignment -name VERILOG_FILE limita_saida_7b.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_limita_saida_7b.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_G18 -to dez_a
+set_location_assignment PIN_F22 -to dez_b
+set_location_assignment PIN_E17 -to dez_c
+set_location_assignment PIN_L26 -to dez_d
+set_location_assignment PIN_Y2 -to clk_rapido
+set_location_assignment PIN_M24 -to unid_a
+set_location_assignment PIN_Y22 -to unid_b
+set_location_assignment PIN_W21 -to unid_c
+set_location_assignment PIN_W22 -to unid_d
+set_location_assignment PIN_W25 -to unid_e
+set_location_assignment PIN_U23 -to unid_f
+set_location_assignment PIN_U24 -to unid_g
+set_location_assignment PIN_L25 -to dez_e
+set_location_assignment PIN_J22 -to dez_f
+set_location_assignment PIN_H22 -to dez_g
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
