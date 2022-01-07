@@ -1,6 +1,7 @@
-module processador(clk_rapido, clk, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g);
+module processador(clk_rapido, clk, reset, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g);
 
 input clk_rapido;
+input reset;
 output clk;
 wire [31:0] stdout;
 output [6:0] stdout_7b;
@@ -27,7 +28,7 @@ assign rd  = inst[11:7];
 
 divisor_freq dfreq(.CLK_50(clk_rapido), .CLK_1(clk));
 
-gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC));
+gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC), .reset(reset));
 
 memoria_de_instrucoes mi(.clk(clk), .ender(atualPC[5:0]), .saida(inst));
 

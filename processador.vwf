@@ -22,6 +22,10 @@ run -all
 quit -f
 
 
+
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,6 +44,10 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
+
 
 
 </modelsim_script_timing>
@@ -319,6 +327,16 @@ SIGNAL("unid_g")
 	PARENT = "";
 }
 
+SIGNAL("reset")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -531,6 +549,21 @@ TRANSITION_LIST("unid_g")
 	}
 }
 
+TRANSITION_LIST("reset")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 665.0;
+			LEVEL 1 FOR 35.0;
+		}
+		LEVEL 0 FOR 600.0;
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clk";
@@ -551,12 +584,21 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stdout_7b";
+	CHANNEL = "reset";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
-	CHILDREN = 3, 4, 5, 6, 7, 8, 9;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "stdout_7b";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+	CHILDREN = 4, 5, 6, 7, 8, 9, 10;
 }
 
 DISPLAY_LINE
@@ -564,9 +606,9 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 3;
+	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
@@ -574,9 +616,9 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 4;
+	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
@@ -584,9 +626,9 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 5;
+	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
@@ -594,9 +636,9 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 6;
+	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
@@ -604,9 +646,9 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 7;
+	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
@@ -614,9 +656,9 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 8;
+	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
@@ -624,23 +666,14 @@ DISPLAY_LINE
 	CHANNEL = "stdout_7b[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
-	TREE_INDEX = 9;
+	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
-	PARENT = 2;
+	PARENT = 3;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "dez_a";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 10;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "dez_b";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 11;
@@ -649,7 +682,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "dez_c";
+	CHANNEL = "dez_b";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 12;
@@ -658,7 +691,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "dez_d";
+	CHANNEL = "dez_c";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 13;
@@ -667,7 +700,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "dez_e";
+	CHANNEL = "dez_d";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;
@@ -676,7 +709,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "dez_f";
+	CHANNEL = "dez_e";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 15;
@@ -685,7 +718,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "dez_g";
+	CHANNEL = "dez_f";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 16;
@@ -694,7 +727,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_a";
+	CHANNEL = "dez_g";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 17;
@@ -703,7 +736,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_b";
+	CHANNEL = "unid_a";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 18;
@@ -712,7 +745,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_c";
+	CHANNEL = "unid_b";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 19;
@@ -721,7 +754,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_d";
+	CHANNEL = "unid_c";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 20;
@@ -730,7 +763,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_e";
+	CHANNEL = "unid_d";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 21;
@@ -739,7 +772,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_f";
+	CHANNEL = "unid_e";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 22;
@@ -748,10 +781,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "unid_g";
+	CHANNEL = "unid_f";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 23;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "unid_g";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 24;
 	TREE_LEVEL = 0;
 }
 
