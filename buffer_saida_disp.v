@@ -11,7 +11,7 @@ module buffer_saida_disp
 (
 	input [(DATA_WIDTH-1):0] dado,
 	input [(ADDR_WIDTH-1):0] end_lei, end_esc,
-	input hab_esc, read_clock, write_clock,
+	input hab_esc, read_clock, write_clock, halt,
 	output reg [3:0] disp_dezena,
 	output reg [3:0] disp_unidade
 );
@@ -22,8 +22,7 @@ module buffer_saida_disp
 	always @ (posedge write_clock)
 	begin
 		// Escrita
-		if (hab_esc)
-			buffer[end_esc] <= dado;
+		buffer[end_esc] <= dado;
 	end
 	
 	integer i;
@@ -31,10 +30,15 @@ module buffer_saida_disp
 	begin
 		// Leitura
 		
-		if(buffer[end_lei] >= 99)
+		if (halt == 1) 
 		begin
-			disp_unidade <= 4'b1001;
-			disp_dezena<= 4'b1001;
+			disp_unidade <= 4'b1010; // traço
+			disp_dezena <= 4'b1010; // traço
+		end
+		else if(buffer[end_lei] >= 99)
+		begin
+			disp_unidade <= 4'b0000; // O
+			disp_dezena<= 4'b1011;   // F   -> Overflow
 		end
 		else
 		begin

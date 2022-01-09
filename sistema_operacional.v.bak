@@ -1,0 +1,12 @@
+module sistema_operacional((clk_rapido, clk, atualPC, HALT, reset, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g));
+
+input clk_rapido;
+input reset;
+output clk, HALT;
+output [6:0] stdout_7b;
+output dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g;
+output unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g;
+
+processador cpu(clk_rapido, clk, atualPC, HALT, reset, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g);
+
+endmodule

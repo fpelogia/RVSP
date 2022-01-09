@@ -1,7 +1,8 @@
-module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL);
+module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL, SwToReg, RegToDisp, HALT);
 input [6:0] opcode, f7;
 input [2:0] f3;
-output reg regWrite, ALUSrc,SeltipoSouB, MemToReg, MemWrite,PCSrc;
+output reg regWrite, ALUSrc,SeltipoSouB, MemToReg, MemWrite,PCSrc, SwToReg;
+output RegToDisp, HALT;
 output [2:0] Tipo_Branch;
 output [1:0] selSLT_JAL;
 output reg [3:0] ALUOp;
@@ -69,7 +70,8 @@ always @(*) begin
 							MemToReg = 0;
 							MemWrite = 0;
 							PCSrc = 0;
-							ALUOp = 4'b1001;
+							ALUOp = 4'b1001
+							;
 							end
 						32: begin // div rd,rs1,rs2
 							regWrite = 1;
@@ -257,16 +259,35 @@ always @(*) begin
 			PCSrc = 0;
 			ALUOp = 4'b0000;
 			end
-		55: begin // lui rd, imm
+		55: begin // IN rd
 			regWrite = 1;
-			ALUSrc = 1;
+			ALUSrc = 0;
+			SeltipoSouB = 0;
+			MemToReg = 0;
+			SwToReg = 1;
+			MemWrite = 0;
+			PCSrc = 0;
+			ALUOp = 4'b0000;
+			end
+		23: begin // OUT rd
+			regWrite = 0;
+			ALUSrc = 0;
 			SeltipoSouB = 0;
 			MemToReg = 0;
 			MemWrite = 0;
 			PCSrc = 0;
 			ALUOp = 4'b0000;
 			end
-		default: begin 
+		63: begin // HALT
+			regWrite = 0;
+			ALUSrc = 0;
+			SeltipoSouB = 0;
+			MemToReg = 0;
+			MemWrite = 0;
+			PCSrc = 0;
+			ALUOp = 4'b0000;
+			end
+		default: begin // NOP (No Operation)
 			regWrite = 1;
 			ALUSrc = 1;
 			SeltipoSouB = 0;
@@ -279,5 +300,7 @@ always @(*) begin
 end
 assign Tipo_Branch = (opcode == 7'b1101111)? 6: ((f3 == 0)? 1: ((f3 == 1)?	2: ((f3 == 4)? 3 : ((f3 == 5)? 4: ((f3 == 6)? 5 : 0)))));
 assign selSLT_JAL = (opcode == 51 && f3 == 2)?((f7 == 32)?3:1):((opcode == 7'b1101111)? 2 : 0);
+assign RegToDisp = (opcode == 23)? 1:0;
+assign HALT = (opcode == 63)? 1:0;
 
 endmodule

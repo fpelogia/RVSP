@@ -1,0 +1,14 @@
+module gerenciador_entr_saida(dado, stdout)
+
+input [31:0] dado;
+output [31:0] stdout;
+
+begin always(posedge )
+
+
+end
+
+
+
+
+endmodule

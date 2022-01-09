@@ -9,8 +9,7 @@ module mem_dados_dual
 	input [(DATA_WIDTH-1):0] dado_entr,
 	input [(ADDR_WIDTH-1):0] end_lei, end_esc,
 	input hab_esc, read_clock, write_clock,
-	output reg [(DATA_WIDTH-1):0] saida,
-	output reg [(DATA_WIDTH-1):0] stdout
+	output reg [(DATA_WIDTH-1):0] saida
 );
 	
 	// Declara a RAM de dados
@@ -27,8 +26,6 @@ module mem_dados_dual
 	begin
 		// Leitura
 		saida <= ram[end_lei];
-		// tirar depois, quando for implementado o módulo de I/O
-		stdout <= ram[63];
 	end
 	
 endmodule

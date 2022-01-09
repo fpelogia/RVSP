@@ -10,16 +10,16 @@ module divisor_freq (CLK_50, CLK_1);
 	always @ (posedge CLK_50)
 	begin
 		// PARA USAR COM CLK DE 50MHz do kit FPGA
-		
-		/*if (OUT == 26'd50000000)
+		/*
+		if (OUT == 26)
 			begin
-				OUT<= 26'd0;
-				CLK_1 <= 1;
+				OUT<= 0;
+				CLK_1 <= ~ CLK_1;
 			end
 		else
 			begin
 				OUT<= OUT+1;
-				CLK_1 <= 0;
+				//CLK_1 <= 0;
 			end
 		*/
 		

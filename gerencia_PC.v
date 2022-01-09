@@ -4,11 +4,12 @@ input[31:0] novoPC;
 output[31:0] atualPC;
 reg [31:0] proxPC;
 
-assign atualPC = proxPC;
+assign atualPC = (reset == 1)? 0 : proxPC;
 
 always @(posedge clk or posedge reset) begin
-	if(reset == 1)
+	if(reset == 1) begin
 		proxPC <= 0;
+	end
 	else
 		proxPC <= novoPC;
 end

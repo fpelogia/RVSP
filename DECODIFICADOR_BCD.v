@@ -7,7 +7,6 @@ module DECODIFICADOR_BCD(d4, a, b, c, d, e, f, g);
 	always @(*)
 	begin
 		case (d4)
-		
 			4'b0000: 
 				d7s=7'b0000001;
 			4'b0001: 
@@ -28,8 +27,12 @@ module DECODIFICADOR_BCD(d4, a, b, c, d, e, f, g);
 				d7s=7'b0000000;
 			4'b1001: 
 				d7s=7'b0000100;
+			4'b1010: 
+				d7s=7'b1111110; // traço
+			4'b1011: 
+				d7s=7'b0111000; // F -> para OF (Overflow)
 			default: 
-				d7s = 7'b1111111;	
+				d7s = 7'b1111111;	// apagado
 		endcase
 	end
 	assign {a,b,c,d,e,f,g} = d7s;

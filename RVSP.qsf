@@ -103,21 +103,25 @@ set_global_assignment -name VERILOG_FILE buffer_saida_disp.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_buffer_saida_disp.vwf
 set_global_assignment -name VERILOG_FILE limita_saida_7b.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_limita_saida_7b.vwf
-set_location_assignment PIN_G18 -to dez_a
-set_location_assignment PIN_F22 -to dez_b
-set_location_assignment PIN_E17 -to dez_c
-set_location_assignment PIN_L26 -to dez_d
+set_location_assignment PIN_M24 -to dez_a
+set_location_assignment PIN_Y22 -to dez_b
+set_location_assignment PIN_W21 -to dez_c
+set_location_assignment PIN_W22 -to dez_d
 set_location_assignment PIN_Y2 -to clk_rapido
-set_location_assignment PIN_M24 -to unid_a
-set_location_assignment PIN_Y22 -to unid_b
-set_location_assignment PIN_W21 -to unid_c
-set_location_assignment PIN_W22 -to unid_d
-set_location_assignment PIN_W25 -to unid_e
-set_location_assignment PIN_U23 -to unid_f
-set_location_assignment PIN_U24 -to unid_g
-set_location_assignment PIN_L25 -to dez_e
-set_location_assignment PIN_J22 -to dez_f
-set_location_assignment PIN_H22 -to dez_g
+set_location_assignment PIN_G18 -to unid_a
+set_location_assignment PIN_F22 -to unid_b
+set_location_assignment PIN_E17 -to unid_c
+set_location_assignment PIN_L26 -to unid_d
+set_location_assignment PIN_L25 -to unid_e
+set_location_assignment PIN_J22 -to unid_f
+set_location_assignment PIN_H22 -to unid_g
+set_location_assignment PIN_W25 -to dez_e
+set_location_assignment PIN_U23 -to dez_f
+set_location_assignment PIN_U24 -to dez_g
+set_global_assignment -name VERILOG_FILE gerenciador_entr_saida.v
+set_global_assignment -name VERILOG_FILE sistema_operacional.v
+set_location_assignment PIN_AD21 -to reset
+set_location_assignment PIN_G19 -to clk
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
