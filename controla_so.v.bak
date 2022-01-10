@@ -1,0 +1,6 @@
+module controla_so(HALT, sel_BIOS);
+
+
+
+
+endmodule

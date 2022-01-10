@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY processador
+set_global_assignment -name TOP_LEVEL_ENTITY sistema_operacional
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:15:21  NOVEMBER 22, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
@@ -59,6 +59,32 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE AREA"
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
+set_global_assignment -name OPTIMIZE_TIMING OFF
+set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_location_assignment PIN_M24 -to dez_a
+set_location_assignment PIN_Y22 -to dez_b
+set_location_assignment PIN_W21 -to dez_c
+set_location_assignment PIN_W22 -to dez_d
+set_location_assignment PIN_Y2 -to clk_rapido
+set_location_assignment PIN_G18 -to unid_a
+set_location_assignment PIN_F22 -to unid_b
+set_location_assignment PIN_E17 -to unid_c
+set_location_assignment PIN_L26 -to unid_d
+set_location_assignment PIN_L25 -to unid_e
+set_location_assignment PIN_J22 -to unid_f
+set_location_assignment PIN_H22 -to unid_g
+set_location_assignment PIN_W25 -to dez_e
+set_location_assignment PIN_U23 -to dez_f
+set_location_assignment PIN_U24 -to dez_g
+set_location_assignment PIN_AD21 -to reset
+set_location_assignment PIN_G19 -to clk
+set_global_assignment -name TEXT_FILE inicializa_bios.txt
+set_global_assignment -name VERILOG_FILE bios.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE sistema_operacional.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_soma_desvio.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_gim.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_ula.vwf
@@ -91,37 +117,18 @@ set_global_assignment -name VERILOG_FILE processador.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_banco_de_registradores.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE processador.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_visualiza.vwf
-set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
-set_global_assignment -name SMART_RECOMPILE ON
-set_global_assignment -name OPTIMIZATION_MODE "AGGRESSIVE AREA"
-set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
-set_global_assignment -name OPTIMIZE_TIMING OFF
-set_global_assignment -name FITTER_EFFORT "FAST FIT"
 set_global_assignment -name VERILOG_FILE mem_dados_dual.v
 set_global_assignment -name VERILOG_FILE divisor_freq.v
 set_global_assignment -name VERILOG_FILE buffer_saida_disp.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_buffer_saida_disp.vwf
 set_global_assignment -name VERILOG_FILE limita_saida_7b.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_limita_saida_7b.vwf
-set_location_assignment PIN_M24 -to dez_a
-set_location_assignment PIN_Y22 -to dez_b
-set_location_assignment PIN_W21 -to dez_c
-set_location_assignment PIN_W22 -to dez_d
-set_location_assignment PIN_Y2 -to clk_rapido
-set_location_assignment PIN_G18 -to unid_a
-set_location_assignment PIN_F22 -to unid_b
-set_location_assignment PIN_E17 -to unid_c
-set_location_assignment PIN_L26 -to unid_d
-set_location_assignment PIN_L25 -to unid_e
-set_location_assignment PIN_J22 -to unid_f
-set_location_assignment PIN_H22 -to unid_g
-set_location_assignment PIN_W25 -to dez_e
-set_location_assignment PIN_U23 -to dez_f
-set_location_assignment PIN_U24 -to dez_g
 set_global_assignment -name VERILOG_FILE gerenciador_entr_saida.v
 set_global_assignment -name VERILOG_FILE sistema_operacional.v
-set_location_assignment PIN_AD21 -to reset
-set_location_assignment PIN_G19 -to clk
+set_global_assignment -name VERILOG_FILE mux_instr_pc.v
+set_global_assignment -name VERILOG_FILE controla_so.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_controla_so.vwf
+set_global_assignment -name VERILOG_FILE HD.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
