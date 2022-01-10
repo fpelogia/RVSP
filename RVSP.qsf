@@ -92,7 +92,6 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_ula.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_mr.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_breg_slt_jal.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_memoria_de_dados.vwf
-set_global_assignment -name TEXT_FILE inicializa_mem_inst.txt
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_memoria_de_instrucoes.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gimm.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gerenciaPC.vwf

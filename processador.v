@@ -1,4 +1,4 @@
-module processador(clk_rapido, clk, atualPC, HALT, inst, reset, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g, rl2out, ulares, memout, MemWrite, HD_instr, HD_out);
+module processador(clk_rapido, clk, atualPC, HALT, inst, reset, stdout_7b, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g, rl2out, ulares, memout, MemWrite, Sel_HD_w, HD_out);
 
 input clk_rapido, clk;
 input reset;
@@ -10,7 +10,7 @@ output [31:0] atualPC;
 output [6:0] stdout_7b;
 output dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g;
 output unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g;
-output MemWrite, HD_instr;
+output MemWrite, Sel_HD_w;
 output [31:0] rl2out, ulares;
 
 wire [31:0] stdout;
@@ -29,14 +29,9 @@ assign rl1  = inst[19:15];
 assign rl2  = inst[24:20];
 assign rd  = inst[11:7];
 
-
-//divisor_freq dfreq(.CLK_50(clk_rapido), .CLK_1(clk));
-
 gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC), .reset(reset));
 
-//memoria_de_instrucoes mi(.clk(clk), .ender(atualPC[5:0]), .saida(inst));
-
-unidade_de_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT_JAL(selSLT_JAL), .SwToReg(SwToReg), .RegToDisp(RegToDisp), .HALT(HALT), .HD_instr(HD_instr));
+unidade_de_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT_JAL(selSLT_JAL), .SwToReg(SwToReg), .RegToDisp(RegToDisp), .HALT(HALT), .Sel_HD_w(Sel_HD_w));
 
 mux_breg_slt_jal mbsj(.selSLT_JAL(selSLT_JAL), .dado(dado), .neg(n), .zero(z), .atualPC(atualPC), .breg_in(breg_in));
 
@@ -49,8 +44,6 @@ gera_imediato gi(.entr_parte1(inst[31:25]), .entr_parte2(imed_p2muxed), .imed19(
 mux_ula mxula(.ALUSrc(ALUSrc), .dado2(rl2out), .imed(imed), .saida(ula_in2));
 
 ULA unid_log_arit(.sel(ALUOp), .X(rl1out), .Y(ula_in2), .res(ulares), .neg(n), .zero(z));
-
-//mem_dados_dual md(.write_clock(clk), .read_clock(clk_rapido), .dado_entr(rl2out),.end_lei(ulares),.end_esc(ulares),.hab_esc(MemWrite),.saida(memout));
 
 mux_memreg mmr(.MemToReg(MemToReg),.ULAres(ulares), .memout(memout), .saida(dado));
 
