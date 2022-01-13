@@ -82,6 +82,7 @@ set_location_assignment PIN_U23 -to dez_f
 set_location_assignment PIN_U24 -to dez_g
 set_location_assignment PIN_AD21 -to reset
 set_location_assignment PIN_G19 -to clk
+set_global_assignment -name TEXT_FILE inicializa_mem_inst.txt
 set_global_assignment -name TEXT_FILE inicializa_bios.txt
 set_global_assignment -name VERILOG_FILE bios.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE sistema_operacional.vwf

@@ -21,12 +21,6 @@ after 2500 simTimestamp
 run -all
 quit -f
 
-
-
-
-
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -45,12 +39,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
-
-
-
-
 
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
@@ -369,6 +357,16 @@ SIGNAL("Sel_BIOS")
 	PARENT = "";
 }
 
+SIGNAL("RegToDisp")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -609,6 +607,15 @@ TRANSITION_LIST("HALT")
 }
 
 TRANSITION_LIST("Sel_BIOS")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("RegToDisp")
 {
 	NODE
 	{
@@ -874,6 +881,15 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 27;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "RegToDisp";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 28;
 	TREE_LEVEL = 0;
 }
 

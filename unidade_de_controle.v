@@ -1,8 +1,8 @@
 module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL, SwToReg, RegToDisp, HALT, Sel_HD_w);
 input [6:0] opcode, f7;
 input [2:0] f3;
-output reg regWrite, ALUSrc,SeltipoSouB, MemWrite,PCSrc, SwToReg;
-output RegToDisp, HALT, Sel_HD_w;
+output reg regWrite, ALUSrc,SeltipoSouB, MemWrite,PCSrc;
+output RegToDisp, HALT, Sel_HD_w, SwToReg;
 output [2:0] Tipo_Branch;
 output [1:0] selSLT_JAL;
 output reg [1:0] MemToReg;
@@ -141,15 +141,35 @@ always @(*) begin
 					PCSrc = 0;
 					ALUOp = 4'b0011;
 					end
-				7: begin // and rd,rs1,rs2
-					regWrite = 1;
-					ALUSrc = 0;
-					SeltipoSouB = 0;
-					MemToReg = 0;
-					MemWrite = 0;
-					PCSrc = 0;
-					ALUOp = 4'b0010;
-					end	
+				7: case(f7)
+						0: begin // and rd,rs1,rs2
+						   regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0010;
+							end	
+						32:begin // jr rs2 (original do MIPS/RISC-V é rs1)
+						   regWrite = 0;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 1; // Como f3==7, TipoBranch = 7
+							ALUOp = 4'b0000;
+							end
+						default:begin
+							regWrite = 0;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0; 
+							MemWrite = 0;
+							PCSrc = 0;
+							ALUOp = 4'b0000;
+						   end
+					endcase
 				default: 
 					begin 
 					regWrite = 1;
@@ -265,7 +285,6 @@ always @(*) begin
 			ALUSrc = 0;
 			SeltipoSouB = 0;
 			MemToReg = 0;
-			SwToReg = 1;
 			MemWrite = 0;
 			PCSrc = 0;
 			ALUOp = 4'b0000;
@@ -317,10 +336,11 @@ always @(*) begin
 		end
 	endcase
 end
-assign Tipo_Branch = (opcode == 7'b1101111)? 6: ((f3 == 0)? 1: ((f3 == 1)?	2: ((f3 == 4)? 3 : ((f3 == 5)? 4: ((f3 == 6)? 5 : 0)))));
+assign Tipo_Branch = (opcode == 7'b1101111)? 6: ((f3 == 0)? 1: ((f3 == 1)?	2: ((f3 == 4)? 3 : ((f3 == 5)? 4: ((f3 == 6)? 5 : ((f3 == 7)? 7 : 0))))));
 assign selSLT_JAL = (opcode == 51 && f3 == 2)?((f7 == 32)?3:1):((opcode == 7'b1101111)? 2 : 0);
-assign RegToDisp = (opcode == 23)? 1:0; // OUT
-assign HALT = (opcode == 63)? 1:0;
-assign Sel_HD_w = (opcode == 61)? 1 : 0; // REG_TO_HD
+assign RegToDisp = (opcode == 23)? 1'b1:1'b0; // OUT
+assign HALT = (opcode == 63)? 1'b1:1'b0; // HALT
+assign Sel_HD_w = (opcode == 61)? 1'b1 : 1'b0; // REG_TO_HD
+assign SwToReg = (opcode == 55)? 1'b1 : 1'b0; // IN
 
 endmodule

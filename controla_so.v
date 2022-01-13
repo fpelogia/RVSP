@@ -1,21 +1,27 @@
-module controla_so(bloq_cpu, reset, HALT, sel_BIOS);
+module controla_so(clk, reset, HALT, bloq_cpu, Sel_BIOS);
 
-input HALT, reset;
-output sel_BIOS, bloq_cpu;
+input clk, reset, HALT;
+output reg Sel_BIOS, bloq_cpu;
 reg BIOS_MODE = 1;
-reg CPU_HAB = 1;
+reg CPU_BLOCK = 0;
 
-assign sel_BIOS = (BIOS_MODE == 1) ? 1 : 0;
-assign bloq_cpu = ~ CPU_HAB;
-
-always @(*) begin
-	if(reset)
-		BIOS_MODE = 1'b1;
-	else if(HALT == 1 && BIOS_MODE == 1) begin
-		CPU_HAB = 1'b1;
-		BIOS_MODE = 1'b0;
+always @(posedge clk or posedge reset) begin
+	if(reset == 1) begin
+		BIOS_MODE <= 1;
+	end
+	else if (HALT == 1 && BIOS_MODE == 1)
+	begin
+		BIOS_MODE <= 0;
+	end
+	else if (HALT == 1 && BIOS_MODE == 0)
+	begin
+		CPU_BLOCK <= 1;
+	end
+	else
+	begin
+		Sel_BIOS <= BIOS_MODE;
+		bloq_cpu <= CPU_BLOCK;
 	end
 end
-
 
 endmodule

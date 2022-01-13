@@ -1,7 +1,7 @@
-module mux_soma_desvio(PCSrc,Tipo_Branch, imed, ULA_res,neg, zero, atualPC, novoPC);
+module mux_soma_desvio(PCSrc,Tipo_Branch, imed, rl2out, neg, zero, atualPC, novoPC);
 input PCSrc, neg, zero;
 input [2:0] Tipo_Branch;
-input [31:0] atualPC, imed, ULA_res;	
+input [31:0] atualPC, imed, rl2out;	
 output reg [31:0] novoPC;
 
 always @(*)begin
@@ -24,13 +24,11 @@ always @(*)begin
 					if (zero == 1 || neg == 0) novoPC = atualPC + imed;
 					else	novoPC = atualPC + 1'd1;
 				end
-			5:	begin //bltu
-					if (neg == 1) novoPC = atualPC + imed;
-					else	novoPC = atualPC + 1'd1;
-					// pensar em como tratar unsigned
-				end
 			6: begin //jal
-					novoPC = imed;
+					novoPC = atualPC + imed; // relativo
+				end
+			7: begin //jr
+					novoPC = rl2out; // absoluto
 				end
 			default: novoPC = atualPC + imed;
 		endcase

@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/GitHub/RVSP/testa_buffer_saida_disp.vwf" --testbench_file="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/testa_buffer_saida_disp.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/GitHub/RVSP/testa_buffer_saida_disp.vwf" --testbench_file="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/testa_buffer_saida_disp.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/" RVSP -c RVSP</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/GitHub/RVSP/simulation/qsim/" RVSP -c RVSP</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/RVSP/testa_buffer_saida_disp.vwf" --testbench_file="C:/Users/fredp/Documents/RVSP/simulation/qsim/testa_buffer_saida_disp.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off RVSP -c RVSP --vector_source="C:/Users/fredp/Documents/RVSP/testa_buffer_saida_disp.vwf" --testbench_file="C:/Users/fredp/Documents/RVSP/simulation/qsim/testa_buffer_saida_disp.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/RVSP/simulation/qsim/" RVSP -c RVSP</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/fredp/Documents/RVSP/simulation/qsim/" RVSP -c RVSP</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work RVSP.vo
@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -345,6 +347,16 @@ SIGNAL("write_clock")
 	PARENT = "";
 }
 
+SIGNAL("halt")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("dado[6]")
 {
 	NODE
@@ -368,7 +380,7 @@ TRANSITION_LIST("dado[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -386,7 +398,7 @@ TRANSITION_LIST("dado[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
@@ -551,6 +563,15 @@ TRANSITION_LIST("write_clock")
 			LEVEL 1 FOR 200.0;
 		}
 		LEVEL 0 FOR 200.0;
+	}
+}
+
+TRANSITION_LIST("halt")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
@@ -818,6 +839,15 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 26;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "halt";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 27;
 	TREE_LEVEL = 0;
 }
 

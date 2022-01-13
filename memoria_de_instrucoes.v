@@ -23,7 +23,7 @@ module memoria_de_instrucoes
 	
 	//Inicializa memória de instruções (Com BIOS ok, não precisaremos mais)
 	initial begin
-		$readmemb("./inicializa_mem_inst.mif", ram);
+		$readmemb("./inicializa_mem_inst.txt", ram);
 	end
 
 	always @ (posedge clk)

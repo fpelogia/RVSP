@@ -22,7 +22,8 @@ module buffer_saida_disp
 	always @ (posedge write_clock)
 	begin
 		// Escrita
-		buffer[end_esc] <= dado;
+		if(hab_esc)
+			buffer[end_esc] <= dado;
 	end
 	
 	integer i;
@@ -34,11 +35,11 @@ module buffer_saida_disp
 		begin
 			disp_unidade <= 4'b1010; // traço
 			disp_dezena <= 4'b1010; // traço
-		end
+		end		
 		else if(buffer[end_lei] >= 99)
 		begin
-			disp_unidade <= 4'b0000; // O
-			disp_dezena<= 4'b1011;   // F   -> Overflow
+			disp_dezena <= 4'b0000; // O
+			disp_unidade<= 4'b1011;   // F   -> Overflow
 		end
 		else
 		begin
