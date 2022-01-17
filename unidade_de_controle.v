@@ -1,8 +1,9 @@
-module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL, SwToReg, RegToDisp, HALT, Sel_HD_w);
+
+module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL, SwToReg, RegToDisp, HALT, Sel_HD_w, Sel_HD_r, WAIT);
 input [6:0] opcode, f7;
 input [2:0] f3;
 output reg regWrite, ALUSrc,SeltipoSouB, MemWrite,PCSrc;
-output RegToDisp, HALT, Sel_HD_w, SwToReg;
+output RegToDisp, HALT, Sel_HD_w, Sel_HD_r, SwToReg, WAIT;
 output [2:0] Tipo_Branch;
 output [1:0] selSLT_JAL;
 output reg [1:0] MemToReg;
@@ -311,12 +312,21 @@ always @(*) begin
 			regWrite = 1; // Escreve dado lido do HD
 			ALUSrc = 0;
 			SeltipoSouB = 0;
-			MemToReg = 2; //HD -> B.reg
+			MemToReg = 0;
 			MemWrite = 0;
 			PCSrc = 0;
 			ALUOp = 4'b0000;
 			end	
 		61: begin // Syscall REG_TO_HD
+			regWrite = 0; 
+			ALUSrc = 0;
+			SeltipoSouB = 0;
+			MemToReg = 0;
+			MemWrite = 0;
+			PCSrc = 0;
+			ALUOp = 4'b0000;
+			end
+		60: begin // Syscall WAIT
 			regWrite = 0; 
 			ALUSrc = 0;
 			SeltipoSouB = 0;
@@ -341,6 +351,8 @@ assign selSLT_JAL = (opcode == 51 && f3 == 2)?((f7 == 32)?3:1):((opcode == 7'b11
 assign RegToDisp = (opcode == 23)? 1'b1:1'b0; // OUT
 assign HALT = (opcode == 63)? 1'b1:1'b0; // HALT
 assign Sel_HD_w = (opcode == 61)? 1'b1 : 1'b0; // REG_TO_HD
+assign Sel_HD_r = (opcode == 62)? 1'b1 : 1'b0; // HD_TO_REG
 assign SwToReg = (opcode == 55)? 1'b1 : 1'b0; // IN
+assign WAIT = (opcode == 60)? 1'b1 : 1'b0; // WAIT
 
 endmodule

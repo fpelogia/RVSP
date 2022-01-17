@@ -4,7 +4,7 @@ module HD
 	//memoria com 64 slots de 32 bits
 	input [31:0] dado_entr,
 	input [(BITS_TRILHA-1):0] trilha,
-    input [(BITS_SETOR-1):0] setor,
+   input [(BITS_SETOR-1):0] setor,
 	input Sel_HD_Lei_Esc, read_clock, write_clock,
 	output reg [31:0] saida
 );

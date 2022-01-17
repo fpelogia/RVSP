@@ -3,7 +3,7 @@
 // separate read/write clocks
 
 module mem_dados_dual
-#(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=6)
+#(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=9)
 (
 	//memoria com 64 slots de 32 bits
 	input [(DATA_WIDTH-1):0] dado_entr,

@@ -4,7 +4,7 @@
 
 module buffer_saida_disp
 
-// por enquanto ARRD_WIDTH = 2, por ser um para cada d7s
+// por enquanto ADDR_WIDTH = 2, por ser um para cada d7s
 // depois aumentar para incluir LCD
 
 #(parameter DATA_WIDTH=7, parameter ADDR_WIDTH=2)
@@ -35,8 +35,13 @@ module buffer_saida_disp
 		begin
 			disp_unidade <= 4'b1010; // traço
 			disp_dezena <= 4'b1010; // traço
-		end		
-		else if(buffer[end_lei] >= 99)
+		end
+		else if(buffer[end_lei] == 100)
+		begin
+			disp_unidade <= 4'b1111;// apagado
+			disp_dezena <= 4'b1111; // apagado
+		end
+		else if(buffer[end_lei] > 100)
 		begin
 			disp_dezena <= 4'b0000; // O
 			disp_unidade<= 4'b1011;   // F   -> Overflow

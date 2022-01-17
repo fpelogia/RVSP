@@ -8,8 +8,8 @@ module banco_de_registradores(clk,rl1, rl2, resc, dado, h_esc, d1, d2);
 	reg [31:0] x[31:0]; // 32 reg's de 32 bits
         // x[0:25] de propósito geral (GPRs)
 		  // x[26] $zero
-		  // x[27] rv - return value 
-		  // x[28] sp - stack pointer
+		  // x[27] $aux
+		  // x[28] rv - return value 
         // x[29] fp - frame pointer1
         // x[30] sp - stack pointer
         // x[31] ra - return address

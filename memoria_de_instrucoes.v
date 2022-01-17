@@ -3,7 +3,7 @@
 // specified with an initial block
 
 module memoria_de_instrucoes
-#(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=6)
+#(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=9)
 (
 	input [(ADDR_WIDTH-1):0] ender, //endereço recebido do PC
 	input clk, //clock

@@ -1,0 +1,10 @@
+module soma_endereco_proc(
+	input[5:0] ender;
+	//terminar
+	
+);
+
+
+
+
+endmodule;
