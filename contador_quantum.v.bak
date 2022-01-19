@@ -1,0 +1,25 @@
+module contador_quantum(clk, quantum_over())
+	
+	parameter quantum = 10;
+	
+	input clk;
+	output reg quantum_over;
+	
+	reg [6:0] contador;
+	
+	always @ (posedge clk)
+	begin
+		if (contador == quantum)
+			begin
+				contador <= 0;
+				quantum_over <= 1;
+			end
+		else
+			begin
+				contador<= contador+1;
+				CLK_1 <= 0;
+			end
+		
+	end
+	
+endmodule

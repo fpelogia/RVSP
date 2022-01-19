@@ -1,4 +1,4 @@
-module sistema_operacional(clk, opcode, id_proc, Sel_HD_Lei_Esc,  pc_fim,breg_in_muxed,confirma, WAIT,regWrite, HD_out, stdout_7b, switches, HALT, clk_rapido, reset, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g);
+module sistema_operacional(clk, opcode, id_proc, Sel_HD_Lei_Esc, quantum_over, pc_fim,breg_in_muxed,confirma, WAIT, regWrite, HD_out, memout, stdout_7b, switches, HALT, clk_rapido, reset, dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g, unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g);
 
 input clk_rapido;
 input reset, confirma;
@@ -8,16 +8,16 @@ output clk;
 output [6:0] stdout_7b;
 output dez_a, dez_b, dez_c, dez_d, dez_e, dez_f, dez_g;
 output unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g;
-output WAIT, HALT, regWrite, Sel_HD_Lei_Esc;
-output [31:0] HD_out, breg_in_muxed;
+output WAIT, HALT, regWrite, Sel_HD_Lei_Esc, quantum_over;
+output [31:0] HD_out, breg_in_muxed, memout;
 wire  Sel_BIOS, RegToDisp, bloq_cpu,SwToReg;
-wire clk_h, MemWrite, READY;
+wire clk_h, clk_c, MemWrite, READY;
 wire [31:0] atualPC;
 output [6:0] pc_fim, opcode;
 wire [3:0] dezena;
 wire [3:0] unidade;
 wire [31:0] inst_bios, inst_mi, inst;
-wire [31:0] rl2out, ulares, memout;
+wire [31:0] rl2out, ulares;
 wire [8:0] ender_mi, ender_md;
 
 assign pc_fim = atualPC[6:0];
@@ -30,8 +30,11 @@ assign READY = confirma;
 
 divisor_freq dfreq(.CLK_50(clk_rapido), .CLK_1(clk));
 
+assign clk_c = clk & ~Sel_BIOS;
+contador_quantum cont_q(.clk(clk_c), .quantum_over(quantum_over), .reset(HALT));
+
 // Controla SO
-controla_so cso(.clk(clk), .reset(reset), .HALT(HALT), .WAIT(WAIT), .READY(READY), .bloq_cpu(bloq_cpu), .Sel_BIOS(Sel_BIOS));
+controla_so cso(.clk(clk), .reset(reset), .HALT(HALT), .Sel_BIOS(Sel_BIOS));
 
 // Habilitador
 assign clk_h = clk & (~WAIT | READY);

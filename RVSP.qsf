@@ -81,9 +81,38 @@ set_location_assignment PIN_W25 -to dez_e
 set_location_assignment PIN_U23 -to dez_f
 set_location_assignment PIN_U24 -to dez_g
 set_location_assignment PIN_AD22 -to reset
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AG25 -to confirma
+set_location_assignment PIN_AF22 -to switches[15]
+set_location_assignment PIN_AF21 -to switches[14]
+set_location_assignment PIN_AE22 -to switches[13]
+set_location_assignment PIN_AC22 -to switches[12]
+set_location_assignment PIN_AF25 -to switches[11]
+set_location_assignment PIN_AE21 -to switches[10]
+set_location_assignment PIN_AF24 -to switches[9]
+set_location_assignment PIN_AF15 -to switches[8]
+set_location_assignment PIN_AD19 -to switches[7]
+set_location_assignment PIN_AF16 -to switches[6]
+set_location_assignment PIN_AC19 -to switches[5]
+set_location_assignment PIN_AE15 -to switches[4]
+set_location_assignment PIN_AD15 -to switches[3]
+set_location_assignment PIN_AE16 -to switches[2]
+set_location_assignment PIN_AD21 -to switches[1]
+set_location_assignment PIN_Y16 -to switches[0]
+set_location_assignment PIN_F17 -to WAIT
+set_location_assignment PIN_H15 -to HALT
+set_location_assignment PIN_J19 -to pc_fim[6]
+set_location_assignment PIN_E18 -to pc_fim[5]
+set_location_assignment PIN_F18 -to pc_fim[4]
+set_location_assignment PIN_F21 -to pc_fim[3]
+set_location_assignment PIN_E19 -to pc_fim[2]
+set_location_assignment PIN_F19 -to pc_fim[1]
+set_location_assignment PIN_G19 -to pc_fim[0]
+set_global_assignment -name VERILOG_FILE contador_quantum.v
 set_global_assignment -name TEXT_FILE inicializa_mem_inst.txt
 set_global_assignment -name TEXT_FILE inicializa_bios.txt
-set_global_assignment -name VERILOG_FILE bios.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE sistema_operacional.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_soma_desvio.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_mux_gim.vwf
@@ -124,40 +153,12 @@ set_global_assignment -name VERILOG_FILE limita_saida_7b.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_limita_saida_7b.vwf
 set_global_assignment -name VERILOG_FILE gerenciador_entr_saida.v
 set_global_assignment -name VERILOG_FILE sistema_operacional.v
+set_global_assignment -name VERILOG_FILE bios.v
 set_global_assignment -name VERILOG_FILE mux_instr_pc.v
 set_global_assignment -name VERILOG_FILE controla_so.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_controla_so.vwf
 set_global_assignment -name VERILOG_FILE HD.v
 set_global_assignment -name VERILOG_FILE debounce.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gerenciador_entr_saida.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_AG25 -to confirma
-set_location_assignment PIN_AF22 -to switches[15]
-set_location_assignment PIN_AF21 -to switches[14]
-set_location_assignment PIN_AE22 -to switches[13]
-set_location_assignment PIN_AC22 -to switches[12]
-set_location_assignment PIN_AF25 -to switches[11]
-set_location_assignment PIN_AE21 -to switches[10]
-set_location_assignment PIN_AF24 -to switches[9]
-set_location_assignment PIN_AF15 -to switches[8]
-set_location_assignment PIN_AD19 -to switches[7]
-set_location_assignment PIN_AF16 -to switches[6]
-set_location_assignment PIN_AC19 -to switches[5]
-set_location_assignment PIN_AE15 -to switches[4]
-set_location_assignment PIN_AD15 -to switches[3]
-set_location_assignment PIN_AE16 -to switches[2]
-set_location_assignment PIN_AD21 -to switches[1]
-set_location_assignment PIN_Y16 -to switches[0]
-set_location_assignment PIN_F17 -to WAIT
-set_location_assignment PIN_H15 -to HALT
-set_location_assignment PIN_J19 -to pc_fim[6]
-set_location_assignment PIN_E18 -to pc_fim[5]
-set_location_assignment PIN_F18 -to pc_fim[4]
-set_location_assignment PIN_F21 -to pc_fim[3]
-set_location_assignment PIN_E19 -to pc_fim[2]
-set_location_assignment PIN_F19 -to pc_fim[1]
-set_location_assignment PIN_G19 -to pc_fim[0]
 set_global_assignment -name VERILOG_FILE soma_endereco_proc.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

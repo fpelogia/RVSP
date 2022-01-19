@@ -17,8 +17,8 @@ always @(posedge clk or posedge reset) begin
 		proxSaida <= dado;
 	else if(SwToReg == 1)
 		proxEntrada <= ({{16{1'b0}},switches});
-	else
-		proxSaida <= 100;
+	//else
+		//proxSaida <= 100;
 		
 	
 end
