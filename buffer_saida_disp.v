@@ -44,7 +44,7 @@ module buffer_saida_disp
 		else if(buffer[end_lei] > 100)
 		begin
 			disp_dezena <= 4'b0000; // O
-			disp_unidade<= 4'b1011;   // F   -> Overflow
+			disp_unidade<= 4'b1011; // F   -> Overflow
 		end
 		else
 		begin

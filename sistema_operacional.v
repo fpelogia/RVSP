@@ -22,7 +22,7 @@ wire [8:0] ender_mi, ender_md;
 
 assign pc_fim = atualPC[6:0];
 assign opcode = inst[6:0];
- 
+
 //Debouncer para botão de confirmação
 //debounce deb(.clk(clk), .n_reset(reset), .button_in(confirma), .DB_out(READY));
 

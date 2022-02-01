@@ -81,9 +81,6 @@ set_location_assignment PIN_W25 -to dez_e
 set_location_assignment PIN_U23 -to dez_f
 set_location_assignment PIN_U24 -to dez_g
 set_location_assignment PIN_AD22 -to reset
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_AG25 -to confirma
 set_location_assignment PIN_AF22 -to switches[15]
 set_location_assignment PIN_AF21 -to switches[14]
@@ -110,7 +107,6 @@ set_location_assignment PIN_F21 -to pc_fim[3]
 set_location_assignment PIN_E19 -to pc_fim[2]
 set_location_assignment PIN_F19 -to pc_fim[1]
 set_location_assignment PIN_G19 -to pc_fim[0]
-set_global_assignment -name VERILOG_FILE contador_quantum.v
 set_global_assignment -name TEXT_FILE inicializa_mem_inst.txt
 set_global_assignment -name TEXT_FILE inicializa_bios.txt
 set_global_assignment -name VECTOR_WAVEFORM_FILE sistema_operacional.vwf
@@ -124,12 +120,18 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE testa_memoria_de_dados.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_memoria_de_instrucoes.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gimm.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gerenciaPC.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_processador_debug.vwf
-set_global_assignment -name BDF_FILE visualiza.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_banco_de_registradores.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_buffer_saida_disp.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE processador.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_visualiza.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gerenciador_entr_saida.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_limita_saida_7b.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_controla_so.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_somador_end_proc.vwf
+set_global_assignment -name VERILOG_FILE banco_de_registradores.v
 set_global_assignment -name VERILOG_FILE memoria_de_instrucoes.v
 set_global_assignment -name VERILOG_FILE gera_imediato.v
 set_global_assignment -name VERILOG_FILE mux_gimm.v
-set_global_assignment -name VERILOG_FILE banco_de_registradores.v
 set_global_assignment -name VERILOG_FILE mux_memreg.v
 set_global_assignment -name VERILOG_FILE unidade_de_controle.v
 set_global_assignment -name VERILOG_FILE splitbits.v
@@ -140,25 +142,21 @@ set_global_assignment -name VERILOG_FILE memoria_de_dados.v
 set_global_assignment -name VERILOG_FILE mux_ula.v
 set_global_assignment -name VERILOG_FILE mux_soma_desvio.v
 set_global_assignment -name VERILOG_FILE ULA.v
-set_global_assignment -name VERILOG_FILE processador_debug.v
-set_global_assignment -name VERILOG_FILE processador.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_banco_de_registradores.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE processador.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_visualiza.vwf
-set_global_assignment -name VERILOG_FILE mem_dados_dual.v
 set_global_assignment -name VERILOG_FILE divisor_freq.v
-set_global_assignment -name VERILOG_FILE buffer_saida_disp.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_buffer_saida_disp.vwf
-set_global_assignment -name VERILOG_FILE limita_saida_7b.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_limita_saida_7b.vwf
-set_global_assignment -name VERILOG_FILE gerenciador_entr_saida.v
-set_global_assignment -name VERILOG_FILE sistema_operacional.v
-set_global_assignment -name VERILOG_FILE bios.v
-set_global_assignment -name VERILOG_FILE mux_instr_pc.v
-set_global_assignment -name VERILOG_FILE controla_so.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_controla_so.vwf
-set_global_assignment -name VERILOG_FILE HD.v
 set_global_assignment -name VERILOG_FILE debounce.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE testa_gerenciador_entr_saida.vwf
+set_global_assignment -name VERILOG_FILE sistema_operacional.v
+set_global_assignment -name VERILOG_FILE processador.v
+set_global_assignment -name VERILOG_FILE mem_dados_dual.v
+set_global_assignment -name VERILOG_FILE gerenciador_entr_saida.v
+set_global_assignment -name VERILOG_FILE limita_saida_7b.v
+set_global_assignment -name VERILOG_FILE buffer_saida_disp.v
+set_global_assignment -name VERILOG_FILE controla_so.v
+set_global_assignment -name VERILOG_FILE mux_instr_pc.v
+set_global_assignment -name VERILOG_FILE bios.v
+set_global_assignment -name VERILOG_FILE HD.v
 set_global_assignment -name VERILOG_FILE soma_endereco_proc.v
+set_global_assignment -name VERILOG_FILE contador_quantum.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

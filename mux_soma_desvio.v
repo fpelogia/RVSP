@@ -9,19 +9,19 @@ always @(*)begin
 		case (Tipo_Branch)
 			0: novoPC = atualPC + imed;
 			1:	begin //beq
-					if (zero == 1) novoPC = atualPC + imed;
+					if (zero == 1) novoPC = atualPC - 1 + imed;
 					else	novoPC = atualPC + 1'd1;
 				end
 			2:	begin //bne
-					if (zero == 0) novoPC = atualPC + imed;
+					if (zero == 0) novoPC = atualPC - 1 + imed;
 					else	novoPC = atualPC + 1'd1;
 				end
 			3:	begin //blt
-					if (neg == 1) novoPC = atualPC + imed;
+					if (neg == 1) novoPC = atualPC - 1 + imed;
 					else	novoPC = atualPC + 1'd1;
 				end
 			4:	begin //bge
-					if (zero == 1 || neg == 0) novoPC = atualPC + imed;
+					if (zero == 1 || neg == 0) novoPC = atualPC - 1 + imed;
 					else	novoPC = atualPC + 1'd1;
 				end
 			6: begin //jal
