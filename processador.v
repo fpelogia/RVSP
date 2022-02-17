@@ -1,4 +1,4 @@
-module processador(clk_rapido, switches, clk, atualPC, HALT, WAIT, inst, reset, stdout_7b, rl2out, ulares, memout, MemWrite, Sel_HD_w, HD_out, RegToDisp, SwToReg, breg_in_muxed, regWrite);
+module processador(clk_rapido, switches, clk, atualPC, HALT, WAIT, inst, reset, stdout_7b, rl2out, ulares, memout, MemWrite, Sel_HD_w, HD_out, RegToDisp, SwToReg, breg_in_muxed, regWrite, Set_ctx);
 
 input clk_rapido, clk;
 input reset;
@@ -8,7 +8,7 @@ input [15:0] switches; // 16 Switches do Kit DE2-115
 output HALT, WAIT;
 output [31:0] atualPC;
 output [6:0] stdout_7b;
-output MemWrite, Sel_HD_w, RegToDisp, SwToReg;
+output MemWrite, Sel_HD_w, RegToDisp, SwToReg, Set_ctx;
 output [31:0] rl2out, ulares, breg_in_muxed, regWrite;
 
 wire [31:0] stdout;
@@ -29,7 +29,7 @@ wire [4:0] rl1, rl2, rd;
 
 gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC), .reset(reset), .HALT(HALT));
 
-unidade_de_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT_JAL(selSLT_JAL), .SwToReg(SwToReg), .RegToDisp(RegToDisp), .HALT(HALT), .Sel_HD_w(Sel_HD_w), .Sel_HD_r(Sel_HD_r), .WAIT(WAIT));
+unidade_de_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT_JAL(selSLT_JAL), .SwToReg(SwToReg), .RegToDisp(RegToDisp), .HALT(HALT), .Sel_HD_w(Sel_HD_w), .Sel_HD_r(Sel_HD_r), .Set_ctx(Set_ctx),.WAIT(WAIT));
 
 mux_breg_slt_jal mbsj(.selSLT_JAL(selSLT_JAL), .dado(dado), .neg(n), .zero(z), .atualPC(atualPC), .breg_in(breg_in));
 

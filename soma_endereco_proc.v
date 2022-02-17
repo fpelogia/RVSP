@@ -12,9 +12,9 @@ input [6:0] tam_particao;
 // para cada tipo de processo
 always @(*)
 begin
-	if(id_proc == 0)
+	if(id_proc == 2'b00)
 		ender = ender_in;
-	else if(id_proc == 1)
+	else if(id_proc == 2'b01)
 		ender = ender_in + M;
 	else
 		ender = ender_in + M + tam_particao;

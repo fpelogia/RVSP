@@ -5,11 +5,12 @@
 module mem_dados_dual
 #(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=9)
 (
-	//memoria com 64 slots de 32 bits
+	//memoria com 512 slots de 32 bits
 	input [(DATA_WIDTH-1):0] dado_entr,
 	input [(ADDR_WIDTH-1):0] end_lei, end_esc,
 	input hab_esc, read_clock, write_clock,
-	output reg [(DATA_WIDTH-1):0] saida
+	output reg [(DATA_WIDTH-1):0] saida,
+	output [1:0] id_proc_atual
 );
 	
 	// Declara a RAM de dados
@@ -27,5 +28,7 @@ module mem_dados_dual
 		// Leitura
 		saida <= ram[end_lei];
 	end
+	
+	assign id_proc_atual = ram[1];
 	
 endmodule

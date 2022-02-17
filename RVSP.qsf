@@ -156,6 +156,7 @@ set_global_assignment -name VERILOG_FILE bios.v
 set_global_assignment -name VERILOG_FILE HD.v
 set_global_assignment -name VERILOG_FILE soma_endereco_proc.v
 set_global_assignment -name VERILOG_FILE contador_quantum.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE testa_unidade_de_controle.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

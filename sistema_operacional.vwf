@@ -31,6 +31,18 @@ quit -f
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -49,6 +61,18 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1397,16 +1421,6 @@ SIGNAL("Sel_HD_Lei_Esc")
 	PARENT = "";
 }
 
-SIGNAL("id_proc")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 SIGNAL("quantum_over")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -1747,6 +1761,16 @@ SIGNAL("memout[0]")
 	PARENT = "memout";
 }
 
+SIGNAL("Set_ctx")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 GROUP("dez_7s")
 {
 	MEMBERS = "dez_a", "dez_b", "dez_c", "dez_d", "dez_e", "dez_f", "dez_g";
@@ -1755,6 +1779,36 @@ GROUP("dez_7s")
 GROUP("unid_7s")
 {
 	MEMBERS = "unid_a", "unid_b", "unid_c", "unid_d", "unid_e", "unid_f", "unid_g";
+}
+
+SIGNAL("id_proc_atual")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 2;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("id_proc_atual[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "id_proc_atual";
+}
+
+SIGNAL("id_proc_atual[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "id_proc_atual";
 }
 
 TRANSITION_LIST("clk_rapido")
@@ -1911,7 +1965,7 @@ TRANSITION_LIST("stdout_7b[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -1920,7 +1974,7 @@ TRANSITION_LIST("stdout_7b[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -1929,7 +1983,7 @@ TRANSITION_LIST("stdout_7b[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -1938,7 +1992,7 @@ TRANSITION_LIST("stdout_7b[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -1947,7 +2001,7 @@ TRANSITION_LIST("stdout_7b[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -1956,7 +2010,7 @@ TRANSITION_LIST("stdout_7b[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -1965,7 +2019,7 @@ TRANSITION_LIST("stdout_7b[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 2000.0;
+		LEVEL 0 FOR 2000.0;
 	}
 }
 
@@ -2127,7 +2181,9 @@ TRANSITION_LIST("switches[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 340.0;
+		LEVEL 1 FOR 800.0;
+		LEVEL 0 FOR 860.0;
 	}
 }
 
@@ -2136,7 +2192,9 @@ TRANSITION_LIST("switches[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 2000.0;
+		LEVEL 0 FOR 340.0;
+		LEVEL 1 FOR 320.0;
+		LEVEL 0 FOR 1340.0;
 	}
 }
 
@@ -2878,15 +2936,6 @@ TRANSITION_LIST("Sel_HD_Lei_Esc")
 	}
 }
 
-TRANSITION_LIST("id_proc")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 2000.0;
-	}
-}
-
 TRANSITION_LIST("quantum_over")
 {
 	NODE
@@ -3176,6 +3225,33 @@ TRANSITION_LIST("memout[1]")
 }
 
 TRANSITION_LIST("memout[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("Set_ctx")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("id_proc_atual[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 2000.0;
+	}
+}
+
+TRANSITION_LIST("id_proc_atual[0]")
 {
 	NODE
 	{
@@ -4827,7 +4903,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "id_proc";
+	CHANNEL = "quantum_over";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 165;
@@ -4836,11 +4912,41 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "quantum_over";
+	CHANNEL = "Set_ctx";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 166;
 	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "id_proc_atual";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 167;
+	TREE_LEVEL = 0;
+	CHILDREN = 168, 169;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "id_proc_atual[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 168;
+	TREE_LEVEL = 1;
+	PARENT = 167;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "id_proc_atual[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 169;
+	TREE_LEVEL = 1;
+	PARENT = 167;
 }
 
 TIME_BAR
