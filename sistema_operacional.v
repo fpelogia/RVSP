@@ -48,7 +48,7 @@ processador cpu(.clk_rapido(clk_rapido), .clk(clk_h), .switches(switches), .atua
 bios bios_rom(.clk(clk_h), .ender(atualPC[5:0]), .saida(inst_bios));
 
 // Memória de Instruções (RAM)
-soma_endereco_proc sep_mi(.id_proc(id_proc), .ender_in(atualPC[8:0]), .ender(ender_mi), .M(7'd20), .tam_particao(7'd50));
+soma_endereco_proc sep_mi(.id_proc(id_proc), .ender_in(atualPC[8:0]), .ender(ender_mi), .M(7'd100), .tam_particao(7'd150));
 memoria_de_instrucoes mi(.clk(clk_h), .ender(ender_mi), .saida(inst_mi), .InstrWrite(0), .dado(rl2out));
 
 // Mux. Instr PC
