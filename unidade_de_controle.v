@@ -1,8 +1,8 @@
-module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL, SwToReg, RegToDisp, HALT, Sel_HD_w, Sel_HD_r, Set_ctx, WAIT);
+module unidade_de_controle(f7, f3, opcode, regWrite, ALUSrc, SeltipoSouB, MemToReg, MemWrite,PCSrc, ALUOp, Tipo_Branch, selSLT_JAL, SwToReg, RegToDisp, HALT, Sel_HD_w, Sel_HD_r, Set_ctx, Set_pid_0, Check_preemp, WAIT);
 input [6:0] opcode, f7;
 input [2:0] f3;
 output reg regWrite, ALUSrc,SeltipoSouB, MemWrite,PCSrc;
-output RegToDisp, HALT, Sel_HD_w, Sel_HD_r, SwToReg, Set_ctx, WAIT;
+output RegToDisp, HALT, Sel_HD_w, Sel_HD_r, SwToReg, Set_ctx, Set_pid_0, Check_preemp, WAIT;
 output [2:0] Tipo_Branch;
 output [1:0] selSLT_JAL;
 output reg [1:0] MemToReg;
@@ -167,6 +167,24 @@ always @(*) begin
 							MemToReg = 0;
 							MemWrite = 0;
 							PCSrc = 1; // Como f3==7, TipoBranch = 7
+							ALUOp = 4'b0000;
+							end
+						2: begin // jr_so rs2
+							regWrite = 0;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 1; // Como f3==7, TipoBranch = 7
+							ALUOp = 4'b0000;
+							end
+						2: begin // PREEMP_TO_REG
+							regWrite = 1;
+							ALUSrc = 0;
+							SeltipoSouB = 0;
+							MemToReg = 0;
+							MemWrite = 0;
+							PCSrc = 0; 
 							ALUOp = 4'b0000;
 							end
 						default:begin
@@ -363,5 +381,7 @@ assign Sel_HD_r = (opcode == 62)? 1'b1 : 1'b0; // HD_TO_REG
 assign SwToReg = (opcode == 55)? 1'b1 : 1'b0; // IN
 assign WAIT = (opcode == 60)? 1'b1 : 1'b0; // WAIT
 assign Set_ctx = (opcode == 51 && f3 == 7 && f7 == 1)? 1:0;// JR_CTX
+assign Set_pid_0 = (opcode == 51 && f3 == 7 && f7 == 2)? 1:0;// JR_SO
+assign Check_preemp = (opcode == 51 && f3 == 7 && f7 == 3)? 1:0;// PREEMP_TO_REG
 
 endmodule
