@@ -1,7 +1,7 @@
-module processador(clk_rapido, switches, clk, atualPC, HALT, WAIT, id_proc, inst, reset, preemp_mode, stdout_7b, rl2out, ulares, memout, MemWrite, Sel_HD_w, HD_out, RegToDisp, SwToReg, breg_in_muxed, regWrite, Set_ctx, Set_pid_0);
+module processador(clk_rapido, switches, clk, atualPC, HALT, WAIT, id_proc, inst, reset, preemp_mode, stdout_7b, rl2out, ulares, memout, MemWrite, Sel_HD_w, HD_out, RegToDisp, SwToReg, breg_in_muxed, regWrite, Set_ctx, Set_pid_0, troca_ctx);
 
 input clk_rapido, clk;
-input reset, preemp_mode;
+input reset, preemp_mode, troca_ctx;
 input [1:0] id_proc;
 input [31:0] inst; // carrega a instrucao completa
 input [31:0] memout, HD_out;
@@ -28,7 +28,7 @@ wire [4:0] rl1, rl2, rd;
 //assign rl2  = inst[24:20];
 //assign rd  = inst[11:7];
 
-gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC), .reset(reset), .HALT(HALT), .id_proc(id_proc));
+gerencia_PC gpc(.clk(clk), .novoPC(novoPC), .atualPC(atualPC), .reset(reset), .HALT(HALT), .id_proc(id_proc), .troca_ctx(troca_ctx));
 
 unidade_de_controle uc(.f7(inst[31:25]), .f3(inst[14:12]), .opcode(inst[6:0]), .regWrite(regWrite), .ALUSrc(ALUSrc), .SeltipoSouB(SeltipoSouB), .MemToReg(MemToReg), .MemWrite(MemWrite),.PCSrc(PCSrc), .ALUOp(ALUOp), .Tipo_Branch(Tipo_Branch), .selSLT_JAL(selSLT_JAL), .SwToReg(SwToReg), .RegToDisp(RegToDisp), .HALT(HALT), .Sel_HD_w(Sel_HD_w), .Sel_HD_r(Sel_HD_r), .Set_ctx(Set_ctx), .Set_pid_0(Set_pid_0),.WAIT(WAIT));
 

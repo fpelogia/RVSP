@@ -5,8 +5,6 @@ input [8:0] ender_in;
 output reg [8:0] ender;
 input [6:0] M;
 input [6:0] tam_particao;
-// Memória de Dados: M = 10
-// Memória de Instruções: M = 50
 
 // Soma deslocamento aos endereços 
 // para cada tipo de processo

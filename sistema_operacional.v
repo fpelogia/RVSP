@@ -12,6 +12,7 @@ output unid_a, unid_b, unid_c, unid_d, unid_e, unid_f, unid_g;
 output WAIT, HALT, regWrite, Sel_HD_Lei_Esc, quantum_over, Set_ctx, Set_pid_0;
 output [31:0] HD_out, breg_in_muxed, memout;
 wire  Sel_BIOS, RegToDisp, bloq_cpu,SwToReg;
+wire troca_ctx, cont_reset;
 wire clk_h, clk_c, MemWrite, READY;
 wire [31:0] atualPC;
 output [1:0] id_proc_atual;// 0 - SO // outro - id do processo
@@ -33,26 +34,28 @@ assign READY = confirma;
 divisor_freq dfreq(.CLK_50(clk_rapido), .CLK_1(clk));
 
 assign clk_c = clk & ~Sel_BIOS;
-contador_quantum cont_q(.clk(clk_c), .quantum_over(quantum_over), .reset(HALT));
+assign cont_reset = (atualPC == 0)? 1:HALT;
+contador_quantum cont_q(.clk(clk_c), .quantum_over(quantum_over), .reset(cont_reset));
+assign troca_ctx = quantum_over & preemp_mode;
 
 // Controla SO
-controla_so cso(.clk(clk), .reset(reset), .HALT(HALT), .Sel_BIOS(Sel_BIOS), .id_proc_atual(id_proc_atual), .id_proc(id_proc), .Set_ctx(Set_ctx), .Set_pid_0(Set_pid_0));
+controla_so cso(.clk(clk), .clk_rapido(clk_rapido), .reset(reset), .HALT(HALT), .Sel_BIOS(Sel_BIOS), .id_proc_atual(id_proc_atual), .id_proc(id_proc), .Set_ctx(Set_ctx), .Set_pid_0(Set_pid_0));
 
 // Habilitador
 assign clk_h = clk & (~WAIT | READY);
 
 // Processador RVSP
-processador cpu(.clk_rapido(clk_rapido), .clk(clk_h), .switches(switches), .atualPC(atualPC), .HALT(HALT), .WAIT(WAIT), .id_proc(id_proc), .inst(inst), .reset(reset), .preemp_mode(preemp_mode), .stdout_7b(stdout_7b), .rl2out(rl2out), .ulares(ulares), .memout(memout), .MemWrite(MemWrite), .Sel_HD_w(Sel_HD_Lei_Esc), .HD_out(HD_out), .RegToDisp(RegToDisp), .SwToReg(SwToReg), .breg_in_muxed(breg_in_muxed), .regWrite(regWrite), .Set_ctx(Set_ctx), .Set_pid_0(Set_pid_0));
+processador cpu(.clk_rapido(clk_rapido), .clk(clk_h), .switches(switches), .atualPC(atualPC), .HALT(HALT), .WAIT(WAIT), .id_proc(id_proc), .inst(inst), .reset(reset), .preemp_mode(preemp_mode), .stdout_7b(stdout_7b), .rl2out(rl2out), .ulares(ulares), .memout(memout), .MemWrite(MemWrite), .Sel_HD_w(Sel_HD_Lei_Esc), .HD_out(HD_out), .RegToDisp(RegToDisp), .SwToReg(SwToReg), .breg_in_muxed(breg_in_muxed), .regWrite(regWrite), .Set_ctx(Set_ctx), .Set_pid_0(Set_pid_0), .troca_ctx(troca_ctx));
 
 // BIOS (ROM)
 bios bios_rom(.clk(clk_h), .ender(atualPC[5:0]), .saida(inst_bios));
 
 // Memória de Instruções (RAM)
-soma_endereco_proc sep_mi(.id_proc(id_proc), .ender_in(atualPC[8:0]), .ender(ender_mi), .M(7'd100), .tam_particao(7'd50));
+soma_endereco_proc sep_mi(.id_proc(id_proc), .ender_in(atualPC[8:0]), .ender(ender_mi), .M(7'd100), .tam_particao(7'd70));
 memoria_de_instrucoes mi(.clk(clk_h), .ender(ender_mi), .saida(inst_mi), .InstrWrite(0), .dado(rl2out));
 
 // Mux. Instr PC
-mux_instr_pc mipc(.inst_bios(inst_bios), .inst_mi(inst_mi), .inst(inst), .sel(Sel_BIOS));
+mux_instr_pc mipc(.inst_bios(inst_bios), .inst_mi(inst_mi), .inst(inst), .sel(Sel_BIOS), .troca_ctx(troca_ctx), .id_proc(id_proc));
 
 // Memória de Dados (RAM)
 soma_endereco_proc  sep_md(.id_proc(id_proc), .ender_in(ulares[8:0]), .ender(ender_md), .M(7'd150), .tam_particao(7'd50));
