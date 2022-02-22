@@ -3,7 +3,6 @@ module sistema_operacional(clk, opcode, Sel_HD_Lei_Esc, quantum_over, pc_fim,bre
 input clk_rapido;
 input reset, confirma, preemp_mode;
 input [15:0] switches; // 16 Switches do Kit DE2-115 
-//input [1:0] id_proc; // 0 - SO // outro - id do processo
 output [1:0] id_proc;
 output clk;
 output [6:0] stdout_7b;

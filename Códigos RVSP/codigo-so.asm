@@ -1,4 +1,5 @@
 // Código do SO
+// aux_so tem o valor do PC do processo anterior
 sw $aux_so, $zero(0) //aux_so é o registrador de endereço 25
 // começa salvamento dos registradores
 beq $aux_so, $zero, NAO_SALVA
@@ -54,48 +55,50 @@ addi $x2, $x0, 1
 sw $x2, $zero(1) // id_proc <-- id_proc + 1 
 .FIM_ELSE_ID_2:
 .FIM_ELSE_ID_0:
-addi $x3, $zero, 3
-addi $x4, $zero, 63 // 32 + 30 + 1
-.INICIO_LOOP: // do {
-lw $aux_so, $x3(0) // Transfere dados de registradores para o fim da fila
-sw $aux_so, $x3(30)
-addi $x3, $x3, 1
-bne $x3, $x4, INICIO_LOOP // } while (x3 != 63)
-nop
-lw $aux_so $zero(0); // $aux_so <-- PC próximo
-lw $x5 $zero(0); // $aux_so <-- PC anterior (preemptado ou finalizado)
-sw $x5 $zero(2); // Transfere PC para o fim da fila
 // começa recuperação dos registradores
-addi $x6, $x6, 30
-lw $x0, $x6(3)
-lw $x1, $x6(4)
-lw $x2, $x6(5)
-lw $x3, $x6(6)
-lw $x4, $x6(7)
-lw $x5, $x6(8)
-lw $x6, $x6(9)
-lw $x7, $x6(10)
-lw $x8, $x6(11)
-lw $x9, $x6(12)
-lw $x10, $x6(13)
-lw $x11, $x6(14)
-lw $x12, $x6(15)
-lw $x13, $x6(16)
-lw $x14, $x6(17)
-lw $x15, $x6(18)
-lw $x16, $x6(19)
-lw $x17, $x6(20)
-lw $x18, $x6(21)
-lw $x19, $x6(22)
-lw $x20, $x6(23)
-lw $x21, $x6(24)
-lw $x22, $x6(25)
-lw $x23, $x6(26)
-lw $x24, $x6(27)
-lw $aux, $x6(28)
-lw $rv, $x6(29)
-lw $fp, $x6(30)
-lw $sp, $x6(31)
-lw $ra, $x6(32)
+addi $aux_so, $zero, 30
+lw $x0, $aux_so(3)
+lw $x1, $aux_so(4)
+lw $x2, $aux_so(5)
+lw $x3, $aux_so(6)
+lw $x4, $aux_so(7)
+lw $x5, $aux_so(8)
+lw $x6, $aux_so(9)
+lw $x7, $aux_so(10)
+lw $x8, $aux_so(11)
+lw $x9, $aux_so(12)
+lw $x10, $aux_so(13)
+lw $x11, $aux_so(14)
+lw $x12, $aux_so(15)
+lw $x13, $aux_so(16)
+lw $x14, $aux_so(17)
+lw $x15, $aux_so(18)
+lw $x16, $aux_so(19)
+lw $x17, $aux_so(20)
+lw $x18, $aux_so(21)
+lw $x19, $aux_so(22)
+lw $x20, $aux_so(23)
+lw $x21, $aux_so(24)
+lw $x22, $aux_so(25)
+lw $x23, $aux_so(26)
+lw $x24, $aux_so(27)
+lw $aux, $aux_so(28)
+lw $rv, $aux_so(29)
+lw $fp, $aux_so(30)
+lw $sp, $aux_so(31)
+lw $ra, $aux_so(32)
 // termina recuperação dos registradores 
-jr_flush_id_proc $aux_so // Parte para execução do programa escalonado
+addi $aux, $zero, 3
+addi $ra, $zero, 33
+.INICIO_LOOP: // do {
+lw $aux_so, $aux(0) // Transfere dados de registradores para o fim da fila
+sw $aux_so, $aux(30)
+addi $aux, $aux, 1
+bne $aux, $ra, INICIO_LOOP // } while (x3 != 63)
+nop
+addi x1, $zero, 100 
+OUT x1
+lw $aux_so $zero(2); // $aux_so <-- PC próximo
+lw $ra $zero(0); // $aux_so <-- PC anterior (preemptado ou finalizado)
+sw $ra $zero(2); // Transfere PC para o fim da fila
+jr_ctx $aux_so // Parte para execução do programa escalonado
